@@ -1,0 +1,19 @@
+segment: professional_offices
+name: "Professional offices"
+seed_products:
+  - product_id: "P02"  # Biz Fibre 300
+  - product_id: "P16"  # Cloud Email & Office Suite
+  - product_id: "P17"  # Cloud Backup 1 TB
+  - product_id: "P20"  # Endpoint Security
+optional_addons:
+  - "P07"  # Business Postpaid 299
+  - "P09"  # Backup 4G/5G Failover
+  - "P23"  # Cloud CCTV
+  - "P15"  # WhatsApp Business API Starter
+  - "P12"  # Cloud Telephony / SIP
+discovery_priority:
+  - "business_type"
+  - "city"
+  - "employees"
+  - "sites"
+  - "has_gstin"

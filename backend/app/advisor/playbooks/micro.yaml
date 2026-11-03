@@ -1,0 +1,18 @@
+segment: micro
+name: "Micro retail & services"
+target_monthly_inr: 2500
+seed_products:
+  - product_id: "P04"  # Biz 5G AirFiber 100 or P01 Biz Fibre 100
+    fallback: "P01"
+  - product_id: "P07"  # Business Postpaid 299
+  - product_id: "P19"  # Cloud POS & Billing
+  - product_id: "P15"  # WhatsApp Business API Starter
+optional_addons:
+  - "P22"  # Secure Wi-Fi with Guest Network
+  - "P23"  # Cloud CCTV
+discovery_priority:
+  - "business_type"
+  - "city"
+  - "employees"
+  - "sites"
+  - "has_gstin"

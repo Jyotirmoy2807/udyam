@@ -1,0 +1,22 @@
+segment: small_multi_site
+name: "Small multi-site businesses"
+seed_products:
+  - product_id: "P01"  # P01 or P02 per site
+    alternate: "P02"
+  - product_id: "P09"  # Backup 4G/5G Failover
+  - product_id: "P22"  # Secure Wi-Fi with Guest Network
+  - product_id: "P23"  # Cloud CCTV
+  - product_id: "P19"  # Cloud POS & Billing
+conditional_products:
+  - product_id: "P10"  # Managed SD-WAN (when sites >= 3)
+    min_sites: 3
+optional_addons:
+  - "P08"  # Business Postpaid 599
+  - "P13"  # Toll-free Number
+  - "P15"  # WhatsApp Business API Starter
+discovery_priority:
+  - "business_type"
+  - "city"
+  - "employees"
+  - "sites"
+  - "has_gstin"

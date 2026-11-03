@@ -1,0 +1,18 @@
+segment: small_manufacturers
+name: "Small manufacturers"
+route_to_partner: true
+seed_products:
+  - product_id: "P05"  # Internet Leased Line 20
+    alternate: "P06"
+  - product_id: "P21"  # Managed Firewall
+  - product_id: "P24"  # Machine Monitoring IoT
+optional_addons:
+  - "P20"  # Endpoint Security
+  - "P25"  # Fleet Tracker
+  - "P11"  # Static IP
+discovery_priority:
+  - "business_type"
+  - "city"
+  - "employees"
+  - "sites"
+  - "has_gstin"
