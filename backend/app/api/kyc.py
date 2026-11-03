@@ -114,6 +114,11 @@ async def upload_kyc_document(
     # Run CV OCR Pipeline
     extractor = TesseractExtractor()
     ocr_result = extractor.extract_document(image_bytes, slot=slot)
+    quality_dict = (
+        ocr_result.quality.__dict__
+        if hasattr(ocr_result.quality, "__dict__")
+        else dict(ocr_result.quality)
+    )
 
     # Upsert KYC Document record
     doc = (
@@ -127,18 +132,18 @@ async def upload_kyc_document(
             slot=slot,
             storage_key=storage_key,
             sha256=sha256,
-            quality=ocr_result.quality,
+            quality=quality_dict,
             extracted=ocr_result.extracted_fields,
-            confidence=ocr_result.confidence,
+            confidence=ocr_result.field_confidences,
             delete_after=datetime.now(timezone.utc) + timedelta(days=settings.DOCUMENT_RETENTION_DAYS),
         )
         db.add(doc)
     else:
         doc.storage_key = storage_key
         doc.sha256 = sha256
-        doc.quality = ocr_result.quality
+        doc.quality = quality_dict
         doc.extracted = ocr_result.extracted_fields
-        doc.confidence = ocr_result.confidence
+        doc.confidence = ocr_result.field_confidences
         doc.delete_after = datetime.now(timezone.utc) + timedelta(days=settings.DOCUMENT_RETENTION_DAYS)
 
     # If GSTIN extracted and not set, update case
@@ -154,7 +159,7 @@ async def upload_kyc_document(
         "status": "UPLOADED",
         "case_id": case_id,
         "slot": slot,
-        "quality": ocr_result.quality,
+        "quality": quality_dict,
         "extracted_fields": ocr_result.extracted_fields,
     }
 
