@@ -1,0 +1,15 @@
+pricing_policy:
+  base_position: 0.50
+  discounts:
+    term_24_months_or_more: -0.15
+    bulk_quantity_5_or_more: -0.10
+    segment_micro: -0.10
+  bounds:
+    min_position: 0.10
+    max_position: 0.90
+  defaults:
+    term_months: 12
+    default_cameras: 4
+    default_counters_per_site: 1
+    default_vehicles: 1
+    max_default_mobile_lines: 10
