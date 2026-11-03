@@ -19,6 +19,8 @@ import { RoutePlaceholder } from "./routes/Placeholder";
 import { StartPage } from "./routes/StartPage";
 import { ChatPage } from "./routes/ChatPage";
 import { QuotePage } from "./routes/QuotePage";
+import { ConsentPage } from "./routes/ConsentPage";
+import { KycPage } from "./routes/KycPage";
 import { api } from "./api/client";
 
 const HomePage: React.FC = () => {
@@ -162,8 +164,8 @@ export const App: React.FC = () => {
           <Route path="/start" element={<StartPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/quote/:quoteId" element={<QuotePage />} />
-          <Route path="/consent" element={<RoutePlaceholder title="DPDP Act Consent Gate" stepNumber={4} />} />
-          <Route path="/kyc/:caseId" element={<RoutePlaceholder title="Smart KYC & OCR Pipeline" stepNumber={4} />} />
+          <Route path="/consent" element={<ConsentPage />} />
+          <Route path="/kyc/:caseId" element={<KycPage />} />
           <Route path="/sign/:quoteId" element={<RoutePlaceholder title="Aadhaar e-Sign & UPI Mandate" stepNumber={5} />} />
           <Route path="/track/:orderId" element={<RoutePlaceholder title="Live SSE Order Tracker" stepNumber={5} />} />
           <Route path="/ops/leads" element={<RoutePlaceholder title="Back-Office Lead Queue" stepNumber={6} />} />

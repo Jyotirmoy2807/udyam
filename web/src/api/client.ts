@@ -270,6 +270,18 @@ export const api = {
 
   getKycCase: (caseId: string) => request<KycCase>(`/kyc/cases/${caseId}`),
 
+  lookupGstin: (gstin: string) => request<any>(`/kyc/registry/gstin/${encodeURIComponent(gstin)}`),
+
+  lookupUdyam: (udyam: string) => request<any>(`/kyc/registry/udyam/${encodeURIComponent(udyam)}`),
+
+  getSpecimens: () =>
+    request<Array<{ code: string; gstin: string; expected: string; label: string }>>("/kyc/specimens"),
+
+  applySpecimen: (caseId: string, code: string) =>
+    request<any>(`/kyc/specimens/${encodeURIComponent(code)}/apply?case_id=${encodeURIComponent(caseId)}`, {
+      method: "POST",
+    }),
+
   // Orders
   createOrder: (quoteId: string, cityTier: number = 1) =>
     request<Order>("/orders", {
