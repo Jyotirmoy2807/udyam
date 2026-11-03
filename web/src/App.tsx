@@ -13,6 +13,7 @@ import {
   CreditCard,
   Truck,
   CheckCircle2,
+  Layers,
 } from "lucide-react";
 import { Layout } from "./components/Layout";
 import { RoutePlaceholder } from "./routes/Placeholder";
@@ -23,6 +24,10 @@ import { ConsentPage } from "./routes/ConsentPage";
 import { KycPage } from "./routes/KycPage";
 import { SignAndPayPage } from "./routes/SignAndPayPage";
 import { TrackerPage } from "./routes/TrackerPage";
+import { OpsLeadsPage } from "./routes/OpsLeadsPage";
+import { OpsKycReviewPage } from "./routes/OpsKycReviewPage";
+import { OpsFunnelPage } from "./routes/OpsFunnelPage";
+import { WhatsAppSimPage } from "./routes/WhatsAppSimPage";
 import { api } from "./api/client";
 
 const HomePage: React.FC = () => {
@@ -153,6 +158,60 @@ const HomePage: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Back-Office Operations & Omnichannel Stretch */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Back-Office Suite */}
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+          <div className="flex items-center space-x-2">
+            <Layers className="w-4 h-4 text-purple-600" />
+            <h3 className="text-sm font-bold text-slate-900">Back-Office & Operations Suite</h3>
+          </div>
+          <p className="text-xs text-slate-500">
+            Field force routing, ML propensity scores, manual KYC supervisor decisions, and conversion analytics.
+          </p>
+          <div className="grid grid-cols-3 gap-2 pt-1">
+            <Link
+              to="/ops/leads"
+              className="p-2.5 bg-slate-50 hover:bg-purple-50 hover:text-purple-700 border border-slate-200 rounded-xl text-center text-xs font-bold text-slate-700 transition-colors block"
+            >
+              Lead Queue
+            </Link>
+            <Link
+              to="/ops/review"
+              className="p-2.5 bg-slate-50 hover:bg-purple-50 hover:text-purple-700 border border-slate-200 rounded-xl text-center text-xs font-bold text-slate-700 transition-colors block"
+            >
+              KYC Desk
+            </Link>
+            <Link
+              to="/ops/funnel"
+              className="p-2.5 bg-slate-50 hover:bg-purple-50 hover:text-purple-700 border border-slate-200 rounded-xl text-center text-xs font-bold text-slate-700 transition-colors block"
+            >
+              Funnel ROI
+            </Link>
+          </div>
+        </div>
+
+        {/* WhatsApp Channel */}
+        <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+          <div className="flex items-center space-x-2">
+            <Sparkles className="w-4 h-4 text-emerald-600" />
+            <h3 className="text-sm font-bold text-slate-900">Omnichannel Customer Touchpoints</h3>
+          </div>
+          <p className="text-xs text-slate-500">
+            Interactive WhatsApp Business advisor simulator featuring quick replies, document upload, and zero-call tracking.
+          </p>
+          <div className="pt-1">
+            <Link
+              to="/wa-sim"
+              className="w-full py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-xl text-center text-xs font-bold transition-colors flex items-center justify-center space-x-2"
+            >
+              <span>Launch WhatsApp Business Simulator</span>
+              <ArrowRight className="w-4 h-4 text-emerald-600" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -170,10 +229,10 @@ export const App: React.FC = () => {
           <Route path="/kyc/:caseId" element={<KycPage />} />
           <Route path="/sign/:quoteId" element={<SignAndPayPage />} />
           <Route path="/track/:orderId" element={<TrackerPage />} />
-          <Route path="/ops/leads" element={<RoutePlaceholder title="Back-Office Lead Queue" stepNumber={6} />} />
-          <Route path="/ops/review" element={<RoutePlaceholder title="Supervisor KYC Review" stepNumber={6} />} />
-          <Route path="/ops/funnel" element={<RoutePlaceholder title="Real-Time Conversion Funnel" stepNumber={6} />} />
-          <Route path="/wa-sim" element={<RoutePlaceholder title="WhatsApp Business Simulator" stepNumber={6} />} />
+          <Route path="/ops/leads" element={<OpsLeadsPage />} />
+          <Route path="/ops/review" element={<OpsKycReviewPage />} />
+          <Route path="/ops/funnel" element={<OpsFunnelPage />} />
+          <Route path="/wa-sim" element={<WhatsAppSimPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Layout>

@@ -1,14 +1,52 @@
-graph TD
-    Client[SMB Customer / Field Partner] --> API[FastAPI Gateway]
-    API --> Advisor[Advisor Engine - Groq Llama 3.3 70B]
-    API --> Catalogue[Catalogue & Pricing Engine]
-    API --> KYC[Smart KYC Pipeline - Tesseract / Vision]
-    API --> Orders[Order State Machine & Simulator]
-    API --> Ops[Back-Office & Funnel Analytics]
+flowchart TD
+    subgraph Channels["Experience Layer (Omnichannel & Mobile-First)"]
+        PWA["Customer PWA (React 18 + Vite)<br/>Hindi / English / Marathi"]
+        WASim["WhatsApp Business Simulator<br/>Interactive Buttons & Media"]
+        BackOffice["Back-Office Suite<br/>Lead Queue · KYC Desk · Funnel ROI"]
+        Partner["Assisted Partner Mode<br/>On-Premises Sales Reps"]
+    end
 
-    Catalogue --> DB[(PostgreSQL 16)]
-    KYC --> MinIO[(MinIO Object Storage)]
-    KYC --> DB
-    Orders --> DB
-    Ops --> DB
-    API --> Redis[(Redis 7 Cache / Queue)]
+    subgraph Gateway["FastAPI Modular Monolith API Gateway"]
+        Auth["Phone OTP Auth & JWT (Role-Based)"]
+        PIIMask["PII Masking & Encryption Middleware"]
+        Clock["ClockPort (Fixed Virtualized Date 2026-07-15)"]
+    end
+
+    subgraph CoreServices["Core Bounded Contexts"]
+        Advisor["AI Advisor Orchestrator<br/>Groq Llama 3.3 70B Versatile"]
+        Rules["Catalogue & Rules Engine<br/>Deterministic 25-Product Constraints"]
+        Pricing["Position-Based Pricing & Quote Service<br/>Add-on Repair Loop · PDF Generator"]
+        KYC["Smart KYC Engine<br/>DPDP Consent Gate · OpenCV Blur/Deskew<br/>Tesseract OCR · RapidFuzz Matcher"]
+        Orders["Order State Machine & Tracker<br/>AirFiber Fallback · Delay Notification"]
+        Propensity["Propensity ML Pipeline<br/>0-100 Score · Top Explainable Factors"]
+    end
+
+    subgraph Storage["Encrypted State & Storage Layer"]
+        DB[("PostgreSQL 16<br/>Relational Schema + Append-Only Events")]
+        MinIO[("MinIO Encrypted S3 Vault<br/>Private KYC Scans · 10m Presigned URLs")]
+        Redis[("Redis 7<br/>Rate Limiting & Job Queues")]
+    end
+
+    subgraph Adapters["External Adapters & Mocks"]
+        GSTN["National GSTN Registry Adapter<br/>CSV Seeded Sandbox (Active/Cancelled)"]
+        Udyam["National Udyam Registry Adapter<br/>Enterprise Verification"]
+        ESign["NPCI Aadhaar e-Sign Mock Adapter"]
+        UPI["NPCI UPI Autopay Mandate Callback"]
+        Notifier["Proactive Notification Outbox<br/>SMS & WhatsApp Proactive Alerts"]
+    end
+
+    Channels --> Gateway
+    Gateway --> CoreServices
+
+    Advisor <--> Rules
+    Rules <--> Pricing
+    Pricing --> ESign
+    Pricing --> UPI
+
+    KYC <--> GSTN
+    KYC <--> Udyam
+    KYC --> MinIO
+
+    Orders --> Notifier
+    CoreServices --> DB
+    Gateway --> Redis

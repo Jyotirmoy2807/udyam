@@ -77,6 +77,60 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
           </Link>
 
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-1 text-xs font-bold text-slate-600">
+            <Link
+              to="/start"
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                location.pathname === "/start" || location.pathname === "/chat"
+                  ? "text-airtel-red bg-red-50 font-black"
+                  : "hover:text-airtel-red hover:bg-slate-100"
+              }`}
+            >
+              Customer Flow
+            </Link>
+            <Link
+              to="/ops/leads"
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                location.pathname === "/ops/leads"
+                  ? "text-purple-700 bg-purple-50 font-black"
+                  : "hover:text-purple-700 hover:bg-slate-100"
+              }`}
+            >
+              Lead Queue
+            </Link>
+            <Link
+              to="/ops/review"
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                location.pathname === "/ops/review"
+                  ? "text-purple-700 bg-purple-50 font-black"
+                  : "hover:text-purple-700 hover:bg-slate-100"
+              }`}
+            >
+              KYC Desk
+            </Link>
+            <Link
+              to="/ops/funnel"
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                location.pathname === "/ops/funnel"
+                  ? "text-airtel-red bg-red-50 font-black"
+                  : "hover:text-airtel-red hover:bg-slate-100"
+              }`}
+            >
+              Funnel ROI
+            </Link>
+            <Link
+              to="/wa-sim"
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                location.pathname === "/wa-sim"
+                  ? "text-emerald-700 bg-emerald-50 font-black"
+                  : "hover:text-emerald-700 hover:bg-slate-100"
+              }`}
+            >
+              WhatsApp Sim
+            </Link>
+          </nav>
+
           {/* Desktop Right Actions */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Health Badge */}
@@ -183,13 +237,41 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
 
             {/* Links */}
-            <div className="flex flex-col space-y-2 pt-2">
+            <div className="flex flex-col space-y-1.5 pt-2">
               <Link
                 to="/start"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-airtel-red text-white font-semibold py-2.5 rounded-lg text-base"
+                className="w-full text-center bg-airtel-red text-white font-semibold py-2 rounded-lg text-sm"
               >
-                {t("nav.start")}
+                Customer Flow
+              </Link>
+              <Link
+                to="/ops/leads"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center bg-purple-50 text-purple-800 font-semibold py-2 rounded-lg text-sm"
+              >
+                Back-Office Lead Queue
+              </Link>
+              <Link
+                to="/ops/review"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center bg-purple-50 text-purple-800 font-semibold py-2 rounded-lg text-sm"
+              >
+                KYC Supervisor Review
+              </Link>
+              <Link
+                to="/ops/funnel"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center bg-slate-100 text-slate-800 font-semibold py-2 rounded-lg text-sm"
+              >
+                Conversion Funnel & Analytics
+              </Link>
+              <Link
+                to="/wa-sim"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center bg-emerald-50 text-emerald-800 font-semibold py-2 rounded-lg text-sm"
+              >
+                WhatsApp Business Simulator
               </Link>
               {token && (
                 <button
@@ -197,7 +279,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                     logout();
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full text-center text-slate-600 font-semibold py-2 text-base"
+                  className="w-full text-center text-slate-500 font-semibold py-1.5 text-xs"
                 >
                   {t("nav.logout")}
                 </button>

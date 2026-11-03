@@ -13,6 +13,11 @@ import {
   KycVerifyResponse,
   Order,
   FunnelResponse,
+  Partner,
+  OpsLead,
+  KycReviewCase,
+  WhatsAppMessageResponse,
+  NotificationOutboxItem,
 } from "./types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
@@ -345,5 +350,58 @@ export const api = {
     request<any>(`/ops/kyc/${caseId}/override`, {
       method: "POST",
       body: JSON.stringify({ new_verdict: newVerdict, reason }),
+    }),
+
+  listPartners: () => request<Partner[]>("/ops/partners"),
+
+  getOpsLeads: (params?: {
+    city?: string;
+    segment?: string;
+    partner_id?: string;
+    exception_reason?: string;
+  }) => {
+    const sp = new URLSearchParams();
+    if (params?.city) sp.set("city", params.city);
+    if (params?.segment) sp.set("segment", params.segment);
+    if (params?.partner_id) sp.set("partner_id", params.partner_id);
+    if (params?.exception_reason) sp.set("exception_reason", params.exception_reason);
+    const qs = sp.toString() ? `?${sp.toString()}` : "";
+    return request<OpsLead[]>(`/ops/leads${qs}`);
+  },
+
+  assignOpsLead: (leadId: string, partnerId?: string | null) =>
+    request<{ status: string; lead_id: string; partner_id: string; partner_name: string }>(
+      `/ops/leads/${leadId}/assign`,
+      {
+        method: "POST",
+        body: JSON.stringify({ partner_id: partnerId || null }),
+      }
+    ),
+
+  getKycReviewCases: () => request<KycReviewCase[]>("/ops/kyc/review"),
+
+  decideKycReviewCase: (caseId: string, decision: "APPROVE" | "REJECT", reason: string, actor?: string) =>
+    request<{ status: string; case_id: string; verdict: string; reason: string }>(
+      `/ops/kyc/${caseId}/decision`,
+      {
+        method: "POST",
+        body: JSON.stringify({ decision, reason, actor: actor || "supervisor@airtel.com" }),
+      }
+    ),
+
+  getNotificationOutbox: (limit: number = 30) =>
+    request<NotificationOutboxItem[]>(`/ops/outbox?limit=${limit}`),
+
+  sendWhatsAppMessage: (payload: {
+    phone?: string;
+    lead_id?: string;
+    text?: string;
+    button_id?: string;
+    media_url?: string;
+    caption?: string;
+  }) =>
+    request<WhatsAppMessageResponse>("/webhooks/whatsapp", {
+      method: "POST",
+      body: JSON.stringify(payload),
     }),
 };

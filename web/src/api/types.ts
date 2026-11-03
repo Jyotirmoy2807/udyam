@@ -203,4 +203,102 @@ export interface FunnelResponse {
     overall_conversion_pct: number;
   };
   stages: FunnelStage[];
+  baseline?: {
+    conversion_pct: number;
+    activation_days: number;
+    status_chases: number;
+    cac_inr: number;
+  };
+  prototype?: {
+    conversion_pct: number;
+    activation_days: number;
+    status_chases: number;
+    cac_inr: number;
+  };
 }
+
+export interface Partner {
+  id: string;
+  name: string;
+  cities: string[];
+  segments: string[];
+}
+
+export interface OpsLead {
+  lead_id: string;
+  created_at: string | null;
+  language: string;
+  phone_masked: string;
+  status: string;
+  exception_reason: string | null;
+  profile: BusinessProfile | null;
+  score: {
+    score: number;
+    model_version: string;
+    top_factors: Array<{ factor: string; impact: string } | string>;
+  };
+  assigned_partner: {
+    id: string;
+    name: string;
+  } | null;
+  draft_quote: {
+    quote_id: string;
+    monthly_recurring: number;
+    one_time: number;
+    term_months: number;
+  } | null;
+  conversation_summary: string;
+}
+
+export interface KycReviewCase {
+  case_id: string;
+  lead_id: string;
+  quote_id: string;
+  verdict: "PENDING" | "PASS" | "NEEDS_FIX" | "MANUAL_REVIEW";
+  retry_count: number;
+  created_at: string | null;
+  decided_at: string | null;
+  phone_masked: string;
+  business_name: string;
+  registry: {
+    source: string;
+    identifier: string;
+    legal_name: string;
+    trade_name: string;
+    status: string;
+    state: string;
+    pincode: string;
+  } | null;
+  checks: Array<{
+    id: string;
+    name: string;
+    outcome: "PASS" | "FAIL" | "REVIEW" | "WARN";
+    score: number | null;
+    detail: Record<string, any>;
+  }>;
+  documents: Array<{
+    id: string;
+    slot: string;
+    filename: string;
+    quality_score: number | null;
+    extracted_fields: Record<string, any>;
+    url: string | null;
+  }>;
+}
+
+export interface WhatsAppMessageResponse {
+  status: string;
+  lead_id: string;
+  reply: string;
+  buttons: Array<{ id: string; title: string }>;
+}
+
+export interface NotificationOutboxItem {
+  id: string;
+  lead_id: string;
+  channel: string;
+  template: string;
+  body: string;
+  sent_at: string | null;
+}
+
