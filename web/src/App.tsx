@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Layout } from "./components/Layout";
 import { RoutePlaceholder } from "./routes/Placeholder";
+import { StartPage } from "./routes/StartPage";
+import { ChatPage } from "./routes/ChatPage";
 import { api } from "./api/client";
 
 const HomePage: React.FC = () => {
@@ -156,8 +158,8 @@ export const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/start" element={<RoutePlaceholder title="Onboarding & OTP Verification" stepNumber={2} />} />
-          <Route path="/chat" element={<RoutePlaceholder title="Multilingual Groq Advisor" stepNumber={2} />} />
+          <Route path="/start" element={<StartPage />} />
+          <Route path="/chat" element={<ChatPage />} />
           <Route path="/quote/:quoteId" element={<RoutePlaceholder title="Quote & Repair Engine" stepNumber={3} />} />
           <Route path="/consent" element={<RoutePlaceholder title="DPDP Act Consent Gate" stepNumber={4} />} />
           <Route path="/kyc/:caseId" element={<RoutePlaceholder title="Smart KYC & OCR Pipeline" stepNumber={4} />} />
