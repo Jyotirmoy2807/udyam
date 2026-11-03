@@ -309,6 +309,33 @@ export const api = {
   simulatePaymentFailed: (orderId: string) =>
     request<any>(`/orders/${orderId}/simulate/payment-failed`, { method: "POST" }),
 
+  advanceOrder: (orderId: string) =>
+    request<any>(`/orders/${orderId}/advance`, { method: "POST" }),
+
+  markSiteInfeasible: (orderId: string, productId: string = "P01") =>
+    request<any>(`/orders/${orderId}/mark-infeasible?product_id=${encodeURIComponent(productId)}`, { method: "POST" }),
+
+  swapAirFiber: (orderId: string) =>
+    request<any>(`/orders/${orderId}/swap-airfiber`, { method: "POST" }),
+
+  retryMandate: (orderId: string) =>
+    request<any>(`/orders/${orderId}/retry-mandate`, { method: "POST" }),
+
+  simulateOrderAction: (
+    orderId: string,
+    payload: {
+      action: "advance" | "site_not_feasible" | "install_delayed" | "payment_failed";
+      failed_product?: string;
+      fallback_product?: string;
+      delay_days?: number;
+      reason?: string;
+    }
+  ) =>
+    request<any>(`/ops/orders/${orderId}/simulate`, {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
+
   // Ops & Webhooks
   getFunnelMetrics: () => request<FunnelResponse>("/ops/funnel"),
 

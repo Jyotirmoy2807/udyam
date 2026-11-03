@@ -21,6 +21,8 @@ import { ChatPage } from "./routes/ChatPage";
 import { QuotePage } from "./routes/QuotePage";
 import { ConsentPage } from "./routes/ConsentPage";
 import { KycPage } from "./routes/KycPage";
+import { SignAndPayPage } from "./routes/SignAndPayPage";
+import { TrackerPage } from "./routes/TrackerPage";
 import { api } from "./api/client";
 
 const HomePage: React.FC = () => {
@@ -166,8 +168,8 @@ export const App: React.FC = () => {
           <Route path="/quote/:quoteId" element={<QuotePage />} />
           <Route path="/consent" element={<ConsentPage />} />
           <Route path="/kyc/:caseId" element={<KycPage />} />
-          <Route path="/sign/:quoteId" element={<RoutePlaceholder title="Aadhaar e-Sign & UPI Mandate" stepNumber={5} />} />
-          <Route path="/track/:orderId" element={<RoutePlaceholder title="Live SSE Order Tracker" stepNumber={5} />} />
+          <Route path="/sign/:quoteId" element={<SignAndPayPage />} />
+          <Route path="/track/:orderId" element={<TrackerPage />} />
           <Route path="/ops/leads" element={<RoutePlaceholder title="Back-Office Lead Queue" stepNumber={6} />} />
           <Route path="/ops/review" element={<RoutePlaceholder title="Supervisor KYC Review" stepNumber={6} />} />
           <Route path="/ops/funnel" element={<RoutePlaceholder title="Real-Time Conversion Funnel" stepNumber={6} />} />

@@ -103,3 +103,29 @@ def override_kyc_verdict(case_id: UUID, req: KycOverrideRequest, db: Session = D
         "new_verdict": case.verdict,
         "actor": req.actor,
     }
+
+
+class OpsOrderSimulateRequest(BaseModel):
+    action: str = "advance"
+    failed_product: str = "P01"
+    fallback_product: str = "P04"
+    delay_days: int = 3
+    reason: str | None = None
+
+
+@router.post("/orders/{order_id}/simulate")
+def ops_simulate_order_route(order_id: UUID, req: OpsOrderSimulateRequest, db: Session = Depends(get_db)):
+    """Simulates field exceptions or state advances from the Ops/Demo bench."""
+    from app.orders.simulator import OrderSimulator
+    from app.api.orders import advance_order_status
+    sim = OrderSimulator(db)
+    if req.action == "site_not_feasible":
+        return sim.simulate_site_not_feasible(order_id, req.failed_product, req.fallback_product)
+    elif req.action == "install_delayed":
+        return sim.simulate_install_delayed(order_id, req.delay_days, req.reason or "Municipal permission delay")
+    elif req.action == "payment_failed":
+        return sim.simulate_payment_failure(order_id, req.reason or "Mandate debit failed")
+    elif req.action == "advance":
+        return advance_order_status(order_id, db)
+    else:
+        raise HTTPException(status_code=400, detail=f"Unknown simulation action: {req.action}")
