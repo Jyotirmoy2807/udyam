@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply text-slate-900 bg-slate-50 text-base;
+  }
+
+  button, input, select, textarea {
+    @apply min-h-tap font-sans text-base;
+  }
+}
+
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}

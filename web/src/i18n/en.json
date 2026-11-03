@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Airtel Udyam Digital",
+    "subtitle": "AI-Assisted SME Connectivity & Digital Transformation",
+    "tagline": "Empowering Bharat's Small Businesses with Enterprise Digital Solutions",
+    "assisted_mode": "Assisted Mode Active (Channel Partner Onboarding)"
+  },
+  "nav": {
+    "start": "Get Started",
+    "chat": "AI Advisor",
+    "quote": "Quote & Pricing",
+    "kyc": "Smart KYC",
+    "tracker": "Order Tracker",
+    "ops": "Back-Office Ops",
+    "logout": "Sign Out"
+  },
+  "health": {
+    "title": "Backend Connection",
+    "healthy": "Connected (System Clock: {{date}})",
+    "degraded": "Service Degraded",
+    "offline": "Backend Offline (Port 8000)",
+    "services": "Postgres: {{pg}} | Redis: {{redis}} | MinIO: {{minio}}"
+  },
+  "common": {
+    "proceed": "Proceed",
+    "continue": "Continue",
+    "back": "Back",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "save": "Save",
+    "loading": "Loading...",
+    "download_pdf": "Download Official Quote PDF",
+    "accept_quote": "Accept Quote & Proceed",
+    "sign_now": "Sign Agreement",
+    "pay_now": "Set Up Mandate",
+    "per_month": "/month",
+    "setup_fee": "One-Time Setup Fee",
+    "total": "Total Amount"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please check your connection and retry.",
+    "server": "Server encountered an issue. Deterministic safeguards activated.",
+    "consent_required": "DPDP Act consent is mandatory before identity verification.",
+    "gstin_cancelled": "Provided GSTIN is Cancelled or Suspended in registry.",
+    "document_blurry": "Uploaded certificate is blurry. Please capture in good lighting.",
+    "address_stale": "Address proof utility bill is older than 90 days."
+  }
+}
