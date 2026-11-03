@@ -8,14 +8,18 @@ from botocore.client import Config
 
 try:
     from app.config import settings
+    from app.api.quotes import router as quotes_router
 except ModuleNotFoundError:
     from backend.app.config import settings
+    from backend.app.api.quotes import router as quotes_router
 
 app = FastAPI(
     title="Project Udyam Digital API",
     version="0.1.0",
     description="AI-Assisted SME Connectivity & Digital Bundle Platform",
 )
+
+app.include_router(quotes_router)
 
 
 @app.get("/health", status_code=status.HTTP_200_OK)
