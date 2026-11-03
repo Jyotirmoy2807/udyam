@@ -28,6 +28,11 @@ def decrypt_identifier(enc_val: str | None) -> str | None:
     return f.decrypt(enc_val.encode("utf-8")).decode("utf-8")
 
 
+# Aliases
+encrypt_field = encrypt_identifier
+decrypt_field = decrypt_identifier
+
+
 def mask_gstin(gstin: str | None) -> str | None:
     if not gstin:
         return None

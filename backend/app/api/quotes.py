@@ -108,6 +108,7 @@ def api_get_quote_pdf(quote_id: UUID, db: Session = Depends(get_db)):
     )
 
 
+@router.post("/quotes/{quote_id}/esign")
 @router.post("/esign/{quote_id}/request")
 def api_request_esign(quote_id: UUID, req: EsignRequest, db: Session = Depends(get_db)):
     quote = db.query(Quote).filter(Quote.id == quote_id).first()
@@ -146,6 +147,7 @@ def api_complete_esign(esign_id: UUID, db: Session = Depends(get_db)):
     return {"status": "completed", "esign_id": str(esign_id), "timestamp": "2026-07-15T10:00:00Z"}
 
 
+@router.post("/quotes/mandate")
 @router.post("/payments/mandate")
 def api_create_mandate(req: MandateRequest, db: Session = Depends(get_db)):
     mandate_id = f"UMRN-{uuid4().hex[:12].upper()}"
@@ -164,6 +166,7 @@ def api_create_mandate(req: MandateRequest, db: Session = Depends(get_db)):
     db.commit()
     return {
         "status": "success",
+        "mandate_status": "ACTIVE",
         "mandate_id": mandate_id,
         "quote_id": str(req.quote_id),
         "vpa": req.vpa,

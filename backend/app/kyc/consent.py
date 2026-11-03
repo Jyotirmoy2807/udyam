@@ -99,3 +99,42 @@ def withdraw_consent(session: Session, consent_id: UUID) -> Consent:
     )
     session.commit()
     return consent
+
+
+class ConsentRequiredException(HTTPException):
+    def __init__(self, detail: str = "Consent required"):
+        super().__init__(status_code=status.HTTP_403_FORBIDDEN, detail=detail)
+
+
+class ConsentManager:
+    """Wrapper manager for DPDP Act consent operations."""
+
+    def __init__(self, session: Session):
+        self.session = session
+
+    def record_consent(
+        self,
+        lead_id: UUID,
+        purposes: list[str],
+        language: str = "en",
+        notice_version: str = "1.0",
+    ) -> Consent:
+        return record_consent(
+            session=self.session,
+            lead_id=lead_id,
+            purposes=purposes,
+            language=language,
+            notice_version=notice_version,
+        )
+
+    def has_active_consent(self, lead_id: UUID, purpose: str | None = None) -> bool:
+        c = (
+            self.session.query(Consent)
+            .filter(Consent.lead_id == lead_id, Consent.withdrawn_at.is_(None))
+            .first()
+        )
+        return c is not None
+
+    def verify(self, lead_id: UUID) -> Consent:
+        return verify_active_consent(self.session, lead_id)
+

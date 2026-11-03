@@ -109,8 +109,9 @@ ADVISOR_TOOLS_SCHEMA = [
 class AdvisorToolExecutor:
     """Executes advisor tools deterministically and updates conversation context."""
 
-    def __init__(self, ctx: ConversationContext):
+    def __init__(self, ctx: ConversationContext, db: Any = None):
         self.ctx = ctx
+        self.db = db
 
     async def __call__(self, fn_name: str, args: dict[str, Any]) -> dict[str, Any]:
         handler = getattr(self, f"tool_{fn_name}", None)

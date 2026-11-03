@@ -49,3 +49,7 @@ class DatabaseRegistry:
             state=row.state,
             date_of_registration=row.date_of_registration,
         )
+
+
+# Alias
+PostgresRegistryAdapter = DatabaseRegistry

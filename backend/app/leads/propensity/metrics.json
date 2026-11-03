@@ -1,0 +1,16 @@
+{
+  "model_type": "RandomForestClassifier",
+  "version": "1.0.0",
+  "train_rows": 3296,
+  "test_rows": 1704,
+  "train_cr": 0.0731,
+  "test_cr": 0.0745,
+  "roc_auc": 0.6684,
+  "pr_auc": 0.1196,
+  "top_decile_lift": 1.883,
+  "subgroup_fairness": {
+    "tier_1_auc": 0.6612,
+    "tier_2_auc": 0.6614,
+    "auc_parity_ratio": 0.9997
+  }
+}

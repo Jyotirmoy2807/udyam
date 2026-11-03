@@ -112,3 +112,20 @@ class AdvisorGuardrail:
             sanitized_content=text,
             fallback_used=False,
         )
+
+
+def validate_guardrail(
+    response_text: str,
+    allowed_products: set[str],
+    allowed_numbers: set[int],
+    lang: str = "en",
+) -> dict[str, Any]:
+    guard = AdvisorGuardrail(allowed_products=allowed_products, allowed_numbers=allowed_numbers)
+    res = guard.evaluate(response_text, lang=lang)
+    return {
+        "is_valid": res.is_valid,
+        "status": "PASS" if res.is_valid else "FALLBACK",
+        "sanitized_text": res.sanitized_content,
+        "hallucinated_products": res.hallucinated_products,
+        "hallucinated_numbers": res.hallucinated_numbers,
+    }
