@@ -189,6 +189,33 @@ export const api = {
 
   getQuote: (quoteId: string) => request<Quote>(`/quotes/${quoteId}`),
 
+  getProducts: (category?: string) =>
+    request<any[]>(category ? `/products?category=${encodeURIComponent(category)}` : "/products"),
+
+  updateQuote: (
+    quoteId: string,
+    updates: {
+      add_products?: string[];
+      remove_products?: string[];
+      qty_updates?: Record<string, number>;
+      term_months?: number;
+    }
+  ) =>
+    request<any>(`/quotes/${quoteId}`, {
+      method: "PATCH",
+      body: JSON.stringify(updates),
+    }),
+
+  acceptQuote: (quoteId: string) =>
+    request<{ status: string; quote_id: string; quote_status: string }>(`/quotes/${quoteId}/accept`, {
+      method: "POST",
+    }),
+
+  amendQuoteForGstin: (quoteId: string) =>
+    request<any>(`/quotes/${quoteId}/amend-gstin`, {
+      method: "POST",
+    }),
+
   downloadQuotePdf: (quoteId: string) => {
     const url = `${API_BASE_URL}/quotes/${quoteId}/pdf`;
     window.open(url, "_blank");

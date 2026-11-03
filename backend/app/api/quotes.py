@@ -58,6 +58,78 @@ def api_create_quote(req: CreateQuoteRequest, db: Session = Depends(get_db)):
     }
 
 
+@router.get("/quotes/{quote_id}")
+def api_get_quote(quote_id: UUID, db: Session = Depends(get_db)):
+    quote = db.query(Quote).filter(Quote.id == quote_id).first()
+    if not quote:
+        raise HTTPException(status_code=404, detail="Quote not found")
+
+    lines = []
+    for ql in quote.lines:
+        lines.append({
+            "product_id": ql.product_id,
+            "name": ql.product.name if ql.product else ql.product_id,
+            "category": ql.product.category if ql.product else None,
+            "qty": ql.qty,
+            "unit_price": ql.unit_price,
+            "line_monthly": ql.line_monthly,
+            "setup": ql.setup,
+            "reason_codes": ql.reason_codes,
+        })
+
+    return {
+        "quote_id": quote.id,
+        "lead_id": quote.lead_id,
+        "version": quote.version,
+        "term_months": quote.term_months,
+        "monthly_recurring": quote.monthly_recurring,
+        "one_time": quote.one_time,
+        "first_month_total": quote.first_month_total,
+        "savings_vs_current": quote.savings_vs_current,
+        "status": quote.status,
+        "lines": lines,
+    }
+
+
+@router.get("/products")
+def api_get_products(category: str | None = None, db: Session = Depends(get_db)):
+    query = db.query(Product)
+    if category:
+        query = query.filter(Product.category == category)
+    products = query.order_by(Product.product_id).all()
+    return [
+        {
+            "product_id": p.product_id,
+            "name": p.name,
+            "category": p.category,
+            "description": p.description,
+            "unit": p.unit,
+            "price_min": p.price_min,
+            "price_max": p.price_max,
+            "setup_fee": p.setup_fee,
+            "requires_gstin": p.requires_gstin,
+            "requires_one_of": p.requires_one_of,
+        }
+        for p in products
+    ]
+
+
+@router.post("/quotes/{quote_id}/amend-gstin")
+def api_amend_gstin(quote_id: UUID, db: Session = Depends(get_db)):
+    try:
+        new_quote = amend_quote_for_invalid_gstin(db, quote_id, reason="GSTIN cancelled in verification")
+        return {
+            "status": "AMENDED",
+            "previous_quote_id": quote_id,
+            "new_quote_id": new_quote.id,
+            "version": new_quote.version,
+            "monthly_recurring": new_quote.monthly_recurring,
+            "one_time": new_quote.one_time,
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
 @router.patch("/quotes/{quote_id}")
 def api_update_quote(quote_id: UUID, req: UpdateQuoteRequest, db: Session = Depends(get_db)):
     try:
