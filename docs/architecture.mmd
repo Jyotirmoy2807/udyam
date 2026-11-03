@@ -1,0 +1,14 @@
+graph TD
+    Client[SMB Customer / Field Partner] --> API[FastAPI Gateway]
+    API --> Advisor[Advisor Engine - Groq Llama 3.3 70B]
+    API --> Catalogue[Catalogue & Pricing Engine]
+    API --> KYC[Smart KYC Pipeline - Tesseract / Vision]
+    API --> Orders[Order State Machine & Simulator]
+    API --> Ops[Back-Office & Funnel Analytics]
+
+    Catalogue --> DB[(PostgreSQL 16)]
+    KYC --> MinIO[(MinIO Object Storage)]
+    KYC --> DB
+    Orders --> DB
+    Ops --> DB
+    API --> Redis[(Redis 7 Cache / Queue)]

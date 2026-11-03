@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "udyam-digital"
+version = "0.1.0"
+description = "Project Udyam Digital - AI-Assisted SME Connectivity & Digital Bundle Platform"
+authors = [{ name = "YTL Hackathon Team" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.2.0",
+    "sqlalchemy>=2.0.30",
+    "psycopg[binary]>=3.1.18",
+    "alembic>=1.13.1",
+    "redis>=5.0.4",
+    "rq>=1.16.1",
+    "boto3>=1.34.100",
+    "groq>=0.9.0",
+    "pytesseract>=0.3.10",
+    "opencv-python-headless>=4.9.0",
+    "Pillow>=10.3.0",
+    "rapidfuzz>=3.8.1",
+    "pandas>=2.2.2",
+    "scikit-learn>=1.4.2",
+    "joblib>=1.4.0",
+    "PyJWT>=2.8.0",
+    "slowapi>=0.1.9",
+    "cryptography>=42.0.5",
+    "structlog>=24.1.0",
+    "pyyaml>=6.0.1",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["app", "."]
+asyncio_mode = "auto"
