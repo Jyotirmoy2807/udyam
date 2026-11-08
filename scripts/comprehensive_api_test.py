@@ -30,7 +30,21 @@ def run_tests():
     print("PROJECT UDYAM DIGITAL: LIVE ENDPOINT-BY-ENDPOINT VERIFICATION")
     print("=" * 75)
 
-    with httpx.Client(base_url=BASE_URL, timeout=30.0) as client:
+    try:
+        with httpx.Client(base_url=BASE_URL, timeout=1.5) as probe:
+            probe.get("/health")
+        client = httpx.Client(base_url=BASE_URL, timeout=30.0)
+        print("Connected to live server at http://127.0.0.1:8000")
+    except Exception:
+        import sys
+        import os
+        sys.path.insert(0, os.path.abspath("backend"))
+        from fastapi.testclient import TestClient
+        from app.main import app
+        client = TestClient(app)
+        print("Using in-process FastAPI TestClient")
+
+    with client:
         # -------------------------------------------------------------
         # 1. Health & Clock
         # -------------------------------------------------------------

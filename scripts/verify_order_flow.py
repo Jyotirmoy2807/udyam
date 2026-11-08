@@ -1,8 +1,21 @@
+import os
+import sys
 import httpx
 
-BASE = "http://127.0.0.1:8000"
+# Try live HTTP server first; fall back to in-process TestClient if server is not up
+try:
+    with httpx.Client(base_url="http://127.0.0.1:8000", timeout=1.5) as probe:
+        probe.get("/health")
+    client = httpx.Client(base_url="http://127.0.0.1:8000", timeout=30.0)
+    print("Connecting to live backend server at http://127.0.0.1:8000...")
+except Exception:
+    sys.path.insert(0, os.path.abspath("backend"))
+    from fastapi.testclient import TestClient
+    from app.main import app
+    client = TestClient(app)
+    print("Testing via in-process FastAPI TestClient...")
 
-with httpx.Client(base_url=BASE, timeout=30.0) as client:
+with client:
     # 1. Create Lead and Quote
     lead_res = client.post("/leads", json={"phone": "9876543210", "language": "en", "source": "web"})
     lead_id = lead_res.json()["lead_id"]
