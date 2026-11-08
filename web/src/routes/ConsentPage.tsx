@@ -83,7 +83,7 @@ export const ConsentPage: React.FC = () => {
           Quote
         </Link>
         <span>&bull;</span>
-        <span className="text-airtel-red">Step 4: DPDP Consent & KYC</span>
+        <span className="text-accel-red">Step 4: DPDP Consent & KYC</span>
       </div>
 
       {/* Main Card */}
@@ -118,7 +118,7 @@ export const ConsentPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
               <div className="flex items-center space-x-2 text-slate-900 font-bold text-xs mb-1">
-                <Lock className="w-4 h-4 text-airtel-red" />
+                <Lock className="w-4 h-4 text-accel-red" />
                 <span>AES-256 Fernet Encryption</span>
               </div>
               <p className="text-[12px] text-slate-500 leading-relaxed">
@@ -128,7 +128,7 @@ export const ConsentPage: React.FC = () => {
 
             <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
               <div className="flex items-center space-x-2 text-slate-900 font-bold text-xs mb-1">
-                <Clock className="w-4 h-4 text-airtel-red" />
+                <Clock className="w-4 h-4 text-accel-red" />
                 <span>30-Day Auto Retention Purge</span>
               </div>
               <p className="text-[12px] text-slate-500 leading-relaxed">
@@ -149,7 +149,7 @@ export const ConsentPage: React.FC = () => {
                 type="checkbox"
                 checked={purposes.kyc_verification}
                 onChange={() => togglePurpose("kyc_verification")}
-                className="w-5 h-5 mt-0.5 text-airtel-red rounded border-slate-300 focus:ring-airtel-red"
+                className="w-5 h-5 mt-0.5 text-accel-red rounded border-slate-300 focus:ring-accel-red"
               />
               <div className="text-xs">
                 <div className="font-bold text-slate-900 flex items-center space-x-2">
@@ -159,7 +159,7 @@ export const ConsentPage: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-slate-500 mt-0.5">
-                  Authorize Airtel Enterprise to verify business registration (GST/Udyam) and premises validity against government registries.
+                  Authorize Accel Enterprise to verify business registration (GST/Udyam) and premises validity against government registries.
                 </div>
               </div>
             </label>
@@ -170,7 +170,7 @@ export const ConsentPage: React.FC = () => {
                 type="checkbox"
                 checked={purposes.service_activation}
                 onChange={() => togglePurpose("service_activation")}
-                className="w-5 h-5 mt-0.5 text-airtel-red rounded border-slate-300 focus:ring-airtel-red"
+                className="w-5 h-5 mt-0.5 text-accel-red rounded border-slate-300 focus:ring-accel-red"
               />
               <div className="text-xs">
                 <div className="font-bold text-slate-900">Digital Service Activation & Feasibility</div>
@@ -186,7 +186,7 @@ export const ConsentPage: React.FC = () => {
                 type="checkbox"
                 checked={purposes.credit_evaluation}
                 onChange={() => togglePurpose("credit_evaluation")}
-                className="w-5 h-5 mt-0.5 text-airtel-red rounded border-slate-300 focus:ring-airtel-red"
+                className="w-5 h-5 mt-0.5 text-accel-red rounded border-slate-300 focus:ring-accel-red"
               />
               <div className="text-xs">
                 <div className="font-bold text-slate-900">Commercial Underwriting & Mandate Setup</div>
@@ -199,16 +199,16 @@ export const ConsentPage: React.FC = () => {
 
           {/* Statutory Declaration Checkbox */}
           <div className="pt-2">
-            <label className="flex items-start space-x-3 p-4 bg-airtel-lightred/30 border border-airtel-red/20 rounded-2xl cursor-pointer">
+            <label className="flex items-start space-x-3 p-4 bg-accel-lightred/30 border border-accel-red/20 rounded-2xl cursor-pointer">
               <input
                 type="checkbox"
                 checked={agreedToNotice}
                 onChange={(e) => setAgreedToNotice(e.target.checked)}
-                className="w-5 h-5 mt-0.5 text-airtel-red rounded border-red-300 focus:ring-airtel-red"
+                className="w-5 h-5 mt-0.5 text-accel-red rounded border-red-300 focus:ring-accel-red"
               />
               <div className="text-xs leading-relaxed text-slate-800">
                 <span className="font-bold text-slate-950">Statutory Consent Declaration: </span>
-                I hereby declare that I am the authorized representative of this enterprise and freely grant consent to Airtel Enterprise to process my business documents in accordance with the Digital Personal Data Protection Act, 2023. I understand I may withdraw this consent at any time via my account dashboard.
+                I hereby declare that I am the authorized representative of this enterprise and freely grant consent to Accel Enterprise to process my business documents in accordance with the Digital Personal Data Protection Act, 2023. I understand I may withdraw this consent at any time via my account dashboard.
               </div>
             </label>
           </div>
@@ -217,7 +217,7 @@ export const ConsentPage: React.FC = () => {
           <button
             type="submit"
             disabled={!agreedToNotice || consentMutation.isPending}
-            className="w-full h-14 bg-airtel-red hover:bg-airtel-darkred disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-base rounded-2xl shadow-md transition-all flex items-center justify-center space-x-2 tap-target"
+            className="w-full h-14 bg-accel-red hover:bg-accel-darkred disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-base rounded-2xl shadow-md transition-all flex items-center justify-center space-x-2 tap-target"
           >
             {consentMutation.isPending ? (
               <span>Recording DPDP Consent...</span>

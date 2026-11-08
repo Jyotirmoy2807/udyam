@@ -385,7 +385,7 @@ export const api = {
       `/ops/kyc/${caseId}/decision`,
       {
         method: "POST",
-        body: JSON.stringify({ decision, reason, actor: actor || "supervisor@airtel.com" }),
+        body: JSON.stringify({ decision, reason, actor: actor || "supervisor@accel.com" }),
       }
     ),
 

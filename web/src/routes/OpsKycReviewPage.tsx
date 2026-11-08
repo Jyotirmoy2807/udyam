@@ -24,7 +24,7 @@ export const OpsKycReviewPage: React.FC = () => {
   const queryClient = useQueryClient();
   const [selectedCase, setSelectedCase] = useState<KycReviewCase | null>(null);
   const [decisionReason, setDecisionReason] = useState<string>("");
-  const [supervisorEmail, setSupervisorEmail] = useState<string>("supervisor@airtel.com");
+  const [supervisorEmail, setSupervisorEmail] = useState<string>("supervisor@accel.com");
 
   // Fetch KYC Cases
   const { data: cases, isLoading } = useQuery({
@@ -114,7 +114,7 @@ export const OpsKycReviewPage: React.FC = () => {
           </Link>
           <Link
             to="/ops/funnel"
-            className="px-4 py-2 bg-airtel-red hover:bg-airtel-darkred text-white text-xs font-bold rounded-xl shadow-sm transition-colors"
+            className="px-4 py-2 bg-accel-red hover:bg-accel-darkred text-white text-xs font-bold rounded-xl shadow-sm transition-colors"
           >
             Conversion Funnel
           </Link>
@@ -256,7 +256,7 @@ export const OpsKycReviewPage: React.FC = () => {
                 {/* Validation Checks Card */}
                 <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
                   <div className="flex items-center space-x-1.5 text-xs font-bold text-slate-800 uppercase">
-                    <FileCheck className="w-3.5 h-3.5 text-airtel-red" />
+                    <FileCheck className="w-3.5 h-3.5 text-accel-red" />
                     <span>Automated Rule Checks ({selectedCase.checks.length})</span>
                   </div>
                   <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
@@ -359,11 +359,11 @@ export const OpsKycReviewPage: React.FC = () => {
               <div className="bg-slate-900 text-white rounded-xl p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <UserCheck className="w-5 h-5 text-airtel-red" />
+                    <UserCheck className="w-5 h-5 text-accel-red" />
                     <h3 className="font-bold text-sm">Supervisor Verification Decision</h3>
                   </div>
                   <span className="text-xs text-slate-400 font-mono">
-                    Audited under DPDP & Airtel Policy
+                    Audited under DPDP & Accel Policy
                   </span>
                 </div>
 

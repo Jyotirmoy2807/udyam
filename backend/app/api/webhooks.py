@@ -26,7 +26,7 @@ class MandateWebhookPayload(BaseModel):
     quote_id: UUID
     lead_id: UUID
     status: str = "AUTHORIZED"
-    umn: str = "airtel.mandate@upi"
+    umn: str = "accel.mandate@upi"
 
 
 class ProvisioningWebhookPayload(BaseModel):
@@ -159,11 +159,11 @@ def handle_whatsapp_webhook(payload: WhatsAppMessagePayload, db: Session = Depen
                 out_text = (
                     f"🎉 Excellent! Quote #{str(quote.id)[:8].upper()} has been accepted.\n\n"
                     f"To proceed with statutory compliance and activation, please complete digital Aadhaar e-Sign & UPI Autopay:\n"
-                    f"👉 https://udyam.airtel.in/sign/{quote.id}?leadId={lead.id}"
+                    f"👉 https://udyam.accel.in/sign/{quote.id}?leadId={lead.id}"
                 )
                 buttons = [
                     {"id": "START_KYC", "title": "Start Smart KYC"},
-                    {"id": "AGENT_HELP", "title": "Speak to Airtel Exec"},
+                    {"id": "AGENT_HELP", "title": "Speak to Accel Exec"},
                 ]
             else:
                 out_text = "Thank you! Our enterprise account manager will contact you shortly."
@@ -176,7 +176,7 @@ def handle_whatsapp_webhook(payload: WhatsAppMessagePayload, db: Session = Depen
                 {"id": "VIEW_STATUS", "title": "Check Order Status"},
             ]
         elif payload.button_id == "VIEW_STATUS":
-            out_text = "🔍 Checking fulfillment status... Your order is being processed by Airtel Enterprise Systems."
+            out_text = "🔍 Checking fulfillment status... Your order is being processed by Accel Enterprise Systems."
         else:
             out_text = f"Received your choice: {payload.button_id}. Let us know how we can tailor your solution."
 
@@ -201,7 +201,7 @@ def handle_whatsapp_webhook(payload: WhatsAppMessagePayload, db: Session = Depen
             # Generate or fetch quote
             quote = create_quote(session=db, lead_id=lead.id, lines=[BundleLine(product_id="P02", qty=1)])
             out_text = (
-                f"📋 *Airtel Enterprise Recommended Plan*\n\n"
+                f"📋 *Accel Enterprise Recommended Plan*\n\n"
                 f"• *Biz Fibre 300 (P02)*: 300 Mbps Dedicated Corporate Bandwidth\n"
                 f"• Monthly Commitment: *₹1,099/mo + GST*\n"
                 f"• Static Commercial IPv4 Block (/29) Included\n"
@@ -217,7 +217,7 @@ def handle_whatsapp_webhook(payload: WhatsAppMessagePayload, db: Session = Depen
                 "📦 *Fulfillment Status Update*\n\n"
                 "Your enterprise service order is in *PROVISIONING*.\n"
                 "Field Engineer: Assigned (SLA Tier-1 Metro: 48h activation).\n"
-                "Live Web Tracker: https://udyam.airtel.in/track/live"
+                "Live Web Tracker: https://udyam.accel.in/track/live"
             )
             buttons = [
                 {"id": "VIEW_STATUS", "title": "Refresh Status"},
@@ -225,7 +225,7 @@ def handle_whatsapp_webhook(payload: WhatsAppMessagePayload, db: Session = Depen
             ]
         else:
             out_text = (
-                "Namaste! Welcome to *Airtel Business Enterprise Advisor* on WhatsApp.\n\n"
+                "Namaste! Welcome to *Accel Business Enterprise Advisor* on WhatsApp.\n\n"
                 "I can instantly help you with:\n"
                 "1. Custom high-speed corporate fiber & 5G AirFiber plans\n"
                 "2. Generating official PDF quotes\n"

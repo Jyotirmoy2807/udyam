@@ -29,7 +29,7 @@ limiter = Limiter(key_func=get_remote_address, default_limits=["120/minute"])
 app = FastAPI(
     title="Project Udyam Digital API",
     version="1.0.0",
-    description="AI-Assisted SME Connectivity & Digital Transformation Platform (Airtel YTL 2026)",
+    description="AI-Assisted SME Connectivity & Digital Transformation Platform (Accel YTL 2026)",
 )
 
 app.state.limiter = limiter

@@ -131,7 +131,7 @@ export const SignAndPayPage: React.FC = () => {
           KYC
         </Link>
         <span>&bull;</span>
-        <span className="text-airtel-red">Step 5: Digital Contract & Autopay Mandate</span>
+        <span className="text-accel-red">Step 5: Digital Contract & Autopay Mandate</span>
       </div>
 
       {/* Contract Summary Header */}
@@ -154,7 +154,7 @@ export const SignAndPayPage: React.FC = () => {
             onClick={() => api.downloadQuotePdf(quoteId!)}
             className="inline-flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-2xs self-start sm:self-auto tap-target"
           >
-            <Download className="w-3.5 h-3.5 text-airtel-red" />
+            <Download className="w-3.5 h-3.5 text-accel-red" />
             <span>Download Agreement PDF</span>
           </button>
         </div>
@@ -181,11 +181,11 @@ export const SignAndPayPage: React.FC = () => {
             <span className="text-[10px] text-slate-500 block">Initial dispatch</span>
           </div>
 
-          <div className="p-4 bg-airtel-lightred/30 rounded-2xl border border-airtel-red/20 text-center">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-airtel-red block mb-1">
+          <div className="p-4 bg-accel-lightred/30 rounded-2xl border border-accel-red/20 text-center">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-accel-red block mb-1">
               Contract Term
             </span>
-            <span className="text-lg sm:text-2xl font-black text-airtel-red font-mono">
+            <span className="text-lg sm:text-2xl font-black text-accel-red font-mono">
               {quote?.term_months || 12}
             </span>
             <span className="text-[10px] text-slate-600 block">Months Lock-in</span>
@@ -264,7 +264,7 @@ export const SignAndPayPage: React.FC = () => {
                       type="text"
                       value={signatoryName}
                       onChange={(e) => setSignatoryName(e.target.value)}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-airtel-red"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-accel-red"
                     />
                   </div>
 
@@ -276,7 +276,7 @@ export const SignAndPayPage: React.FC = () => {
                       type="text"
                       value={signatoryPhone}
                       onChange={(e) => setSignatoryPhone(e.target.value)}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-airtel-red"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-accel-red"
                     />
                   </div>
                 </div>
@@ -311,7 +311,7 @@ export const SignAndPayPage: React.FC = () => {
                         value={otpValue}
                         onChange={(e) => setOtpValue(e.target.value)}
                         placeholder="123456"
-                        className="w-48 h-12 px-4 rounded-xl border border-slate-300 font-mono text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-airtel-red"
+                        className="w-48 h-12 px-4 rounded-xl border border-slate-300 font-mono text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-accel-red"
                       />
 
                       <button
@@ -340,7 +340,7 @@ export const SignAndPayPage: React.FC = () => {
                       type="text"
                       value={delegateName}
                       onChange={(e) => setDelegateName(e.target.value)}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-airtel-red"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-accel-red"
                     />
                   </div>
 
@@ -352,7 +352,7 @@ export const SignAndPayPage: React.FC = () => {
                       type="text"
                       value={delegatePhone}
                       onChange={(e) => setDelegatePhone(e.target.value)}
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-airtel-red"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-accel-red"
                     />
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export const SignAndPayPage: React.FC = () => {
               value={vpa}
               onChange={(e) => setVpa(e.target.value.toLowerCase())}
               placeholder="e.g. enterprise@okhdfcbank"
-              className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-airtel-red"
+              className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-accel-red"
             />
           </div>
 
@@ -463,7 +463,7 @@ export const SignAndPayPage: React.FC = () => {
             <select
               value={bankName}
               onChange={(e) => setBankName(e.target.value)}
-              className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-airtel-red bg-white"
+              className="w-full h-11 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-accel-red bg-white"
             >
               <option value="HDFC Bank">HDFC Bank</option>
               <option value="State Bank of India">State Bank of India</option>
@@ -487,7 +487,7 @@ export const SignAndPayPage: React.FC = () => {
           type="button"
           onClick={() => mandateMutation.mutate()}
           disabled={!isSigned || mandateMutation.isPending}
-          className="w-full h-14 bg-airtel-red hover:bg-airtel-darkred disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-base rounded-2xl shadow-md transition-all flex items-center justify-center space-x-2 tap-target"
+          className="w-full h-14 bg-accel-red hover:bg-accel-darkred disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-base rounded-2xl shadow-md transition-all flex items-center justify-center space-x-2 tap-target"
         >
           {mandateMutation.isPending ? (
             <span>Authorizing Mandate & Generating Order...</span>

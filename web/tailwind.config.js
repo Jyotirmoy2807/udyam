@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        airtel: {
+        accel: {
           red: "#E40000",
           darkred: "#B30000",
           lightred: "#FFF1F1",

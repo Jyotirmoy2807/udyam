@@ -64,7 +64,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo & Brand */}
           <Link to="/" className="flex items-center space-x-2.5">
-            <div className="w-9 h-9 bg-airtel-red rounded-lg flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
+            <div className="w-9 h-9 bg-accel-red rounded-lg flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
               a
             </div>
             <div>
@@ -83,8 +83,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               to="/start"
               className={`px-3 py-1.5 rounded-lg transition-colors ${
                 location.pathname === "/start" || location.pathname === "/chat"
-                  ? "text-airtel-red bg-red-50 font-black"
-                  : "hover:text-airtel-red hover:bg-slate-100"
+                  ? "text-accel-red bg-red-50 font-black"
+                  : "hover:text-accel-red hover:bg-slate-100"
               }`}
             >
               Customer Flow
@@ -113,8 +113,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               to="/ops/funnel"
               className={`px-3 py-1.5 rounded-lg transition-colors ${
                 location.pathname === "/ops/funnel"
-                  ? "text-airtel-red bg-red-50 font-black"
-                  : "hover:text-airtel-red hover:bg-slate-100"
+                  ? "text-accel-red bg-red-50 font-black"
+                  : "hover:text-accel-red hover:bg-slate-100"
               }`}
             >
               Funnel ROI
@@ -174,7 +174,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 </span>
                 <button
                   onClick={logout}
-                  className="p-2 text-slate-500 hover:text-airtel-red transition-colors"
+                  className="p-2 text-slate-500 hover:text-accel-red transition-colors"
                   title={t("nav.logout")}
                   aria-label={t("nav.logout")}
                 >
@@ -184,7 +184,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             ) : (
               <Link
                 to="/start"
-                className="bg-airtel-red hover:bg-airtel-darkred text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors shadow-sm"
+                className="bg-accel-red hover:bg-accel-darkred text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors shadow-sm"
               >
                 {t("nav.start")}
               </Link>
@@ -241,7 +241,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <Link
                 to="/start"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-airtel-red text-white font-semibold py-2 rounded-lg text-sm"
+                className="w-full text-center bg-accel-red text-white font-semibold py-2 rounded-lg text-sm"
               >
                 Customer Flow
               </Link>
@@ -297,7 +297,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>&copy; 2026 Bharti Airtel Limited &bull; Project Udyam Digital</span>
+          <span>&copy; 2026 Bharti Accel Limited &bull; Project Udyam Digital</span>
           <div className="flex items-center space-x-3 text-slate-400">
             <span>DPDP Act 2023 Compliant</span>
             <span>&bull;</span>

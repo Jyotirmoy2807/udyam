@@ -98,13 +98,13 @@ export const ChatPage: React.FC = () => {
       const isMarathi = (leadData.language || i18n.language).startsWith("mr");
 
       let greeting =
-        "Hello! I am your Airtel Udyam Digital Advisor. What type of business do you run, and which city are you located in?";
+        "Hello! I am your Accel Udyam Digital Advisor. What type of business do you run, and which city are you located in?";
       if (isHindi) {
         greeting =
-          "नमस्ते! मैं आपका एयरटेल उद्यम डिजिटल सलाहकार हूँ। आप किस प्रकार का व्यवसाय चलाते हैं और आप किस शहर में स्थित हैं?";
+          "नमस्ते! मैं आपका एक्सेल उद्यम डिजिटल सलाहकार हूँ। आप किस प्रकार का व्यवसाय चलाते हैं और आप किस शहर में स्थित हैं?";
       } else if (isMarathi) {
         greeting =
-          "नमस्कार! मी आपला एअरटेल उद्यम डिजिटल सल्लागार आहे. आपला व्यवसाय कोणत्या प्रकारचा आहे आणि आपण कोणत्या शहरात आहात?";
+          "नमस्कार! मी आपला एक्सेल उद्यम डिजिटल सल्लागार आहे. आपला व्यवसाय कोणत्या प्रकारचा आहे आणि आपण कोणत्या शहरात आहात?";
       }
 
       setMessages([
@@ -183,7 +183,7 @@ export const ChatPage: React.FC = () => {
           id: `bot-${Date.now()}`,
           role: "assistant",
           content:
-            "Thank you. Based on your business profile, we recommend Airtel SMB Digital Connectivity. Please see the recommended plan details below.",
+            "Thank you. Based on your business profile, we recommend Accel SMB Digital Connectivity. Please see the recommended plan details below.",
         },
       ]);
     } finally {
@@ -254,13 +254,13 @@ export const ChatPage: React.FC = () => {
         {/* Chat Header */}
         <div className="px-5 py-4 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-airtel-red text-white rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 bg-accel-red text-white rounded-xl flex items-center justify-center shadow-sm">
               <Bot className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-bold text-slate-900 text-base leading-tight">
-                  Airtel Udyam Advisor
+                  Accel Udyam Advisor
                 </span>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               </div>
@@ -275,7 +275,7 @@ export const ChatPage: React.FC = () => {
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
             className="lg:hidden p-2 text-slate-600 bg-white border border-slate-200 rounded-xl tap-target flex items-center space-x-1 text-xs font-bold"
           >
-            <SlidersHorizontal className="w-4 h-4 text-airtel-red" />
+            <SlidersHorizontal className="w-4 h-4 text-accel-red" />
             <span>Profile</span>
           </button>
         </div>
@@ -290,7 +290,7 @@ export const ChatPage: React.FC = () => {
                 className={`flex items-start gap-3 ${isBot ? "justify-start" : "justify-end"}`}
               >
                 {isBot && (
-                  <div className="w-8 h-8 rounded-lg bg-airtel-lightred text-airtel-red flex items-center justify-center shrink-0 mt-1">
+                  <div className="w-8 h-8 rounded-lg bg-accel-lightred text-accel-red flex items-center justify-center shrink-0 mt-1">
                     <Bot className="w-5 h-5" />
                   </div>
                 )}
@@ -298,7 +298,7 @@ export const ChatPage: React.FC = () => {
                   className={`max-w-[85%] sm:max-w-[75%] rounded-2xl px-4 py-3 text-base leading-relaxed ${
                     isBot
                       ? "bg-slate-100 text-slate-900 border border-slate-200/60"
-                      : "bg-airtel-red text-white shadow-sm"
+                      : "bg-accel-red text-white shadow-sm"
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{msg.content}</p>
@@ -309,7 +309,7 @@ export const ChatPage: React.FC = () => {
                       <span>Verified deterministic pricing</span>
                       <button
                         onClick={() => speak(msg.content)}
-                        className="text-slate-500 hover:text-airtel-red p-1 flex items-center space-x-1"
+                        className="text-slate-500 hover:text-accel-red p-1 flex items-center space-x-1"
                         title="Listen to response"
                       >
                         <Volume2 className="w-3.5 h-3.5" />
@@ -330,11 +330,11 @@ export const ChatPage: React.FC = () => {
           {/* Live Streaming Bubble */}
           {isStreaming && (
             <div className="flex items-start gap-3 justify-start">
-              <div className="w-8 h-8 rounded-lg bg-airtel-lightred text-airtel-red flex items-center justify-center shrink-0 mt-1">
+              <div className="w-8 h-8 rounded-lg bg-accel-lightred text-accel-red flex items-center justify-center shrink-0 mt-1">
                 <Bot className="w-5 h-5" />
               </div>
               <div className="bg-slate-100 text-slate-900 border border-slate-200/60 rounded-2xl px-4 py-3 text-base max-w-[80%] flex items-center space-x-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-airtel-red animate-ping" />
+                <span className="inline-block w-2 h-2 rounded-full bg-accel-red animate-ping" />
                 <span className="text-slate-500 font-medium">Advisor is typing response...</span>
               </div>
             </div>
@@ -353,7 +353,7 @@ export const ChatPage: React.FC = () => {
               key={idx}
               type="button"
               onClick={() => handleChipClick(chip)}
-              className="px-3 py-1.5 bg-white hover:bg-airtel-lightred hover:text-airtel-red hover:border-airtel-red/40 border border-slate-200 rounded-full text-xs font-semibold text-slate-700 transition-all shadow-2xs shrink-0"
+              className="px-3 py-1.5 bg-white hover:bg-accel-lightred hover:text-accel-red hover:border-accel-red/40 border border-slate-200 rounded-full text-xs font-semibold text-slate-700 transition-all shadow-2xs shrink-0"
             >
               {chip}
             </button>
@@ -388,13 +388,13 @@ export const ChatPage: React.FC = () => {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Ask anything or answer in your language..."
-              className="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-airtel-red text-base text-slate-900 tap-target"
+              className="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-accel-red text-base text-slate-900 tap-target"
             />
 
             <button
               type="submit"
               disabled={!inputText.trim() || isStreaming}
-              className="bg-airtel-red hover:bg-airtel-darkred disabled:bg-slate-200 text-white p-3 rounded-xl transition-all tap-target flex items-center justify-center shadow-sm"
+              className="bg-accel-red hover:bg-accel-darkred disabled:bg-slate-200 text-white p-3 rounded-xl transition-all tap-target flex items-center justify-center shadow-sm"
               title="Send message"
             >
               <Send className="w-5 h-5" />
@@ -413,7 +413,7 @@ export const ChatPage: React.FC = () => {
         <div className="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center space-x-2">
-              <SlidersHorizontal className="w-4 h-4 text-airtel-red" />
+              <SlidersHorizontal className="w-4 h-4 text-accel-red" />
               <span>Extracted Profile Slots</span>
             </h2>
             <span className="text-[11px] bg-slate-100 text-slate-600 font-semibold px-2 py-0.5 rounded">
@@ -453,7 +453,7 @@ export const ChatPage: React.FC = () => {
         {activeRecommendation?.primary && (
           <div className="bg-gradient-to-br from-white to-red-50/40 rounded-3xl p-5 border border-red-200 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
-              <div className="inline-flex items-center space-x-1.5 bg-airtel-red text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-1.5 bg-accel-red text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                 <Sparkles className="w-3 h-3" />
                 <span>Recommended Bundle</span>
               </div>
@@ -483,7 +483,7 @@ export const ChatPage: React.FC = () => {
                   className="flex items-center justify-between p-2 bg-white rounded-lg border border-slate-200 text-xs font-medium text-slate-800"
                 >
                   <div className="flex items-center space-x-2">
-                    <Wifi className="w-3.5 h-3.5 text-airtel-red" />
+                    <Wifi className="w-3.5 h-3.5 text-accel-red" />
                     <span>Product ID: <strong>{line.product_id}</strong></span>
                   </div>
                   <span className="text-slate-500 font-mono">Qty: {line.qty}</span>
@@ -495,7 +495,7 @@ export const ChatPage: React.FC = () => {
             <button
               onClick={handleProceedToQuote}
               disabled={creatingQuote}
-              className="w-full bg-airtel-red hover:bg-airtel-darkred text-white font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center space-x-2 tap-target transition-all active:scale-95"
+              className="w-full bg-accel-red hover:bg-accel-darkred text-white font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center space-x-2 tap-target transition-all active:scale-95"
             >
               <span>{creatingQuote ? "Generating Quote..." : "View Full Quote & Customize"}</span>
               <ArrowRight className="w-4 h-4" />

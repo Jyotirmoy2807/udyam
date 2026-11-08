@@ -7,12 +7,12 @@ export const RoutePlaceholder: React.FC<{ title: string; stepNumber: number }> =
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center max-w-xl mx-auto my-12">
-      <div className="w-14 h-14 bg-airtel-lightred text-airtel-red rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+      <div className="w-14 h-14 bg-accel-lightred text-accel-red rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
         {stepNumber}
       </div>
       <h1 className="text-2xl font-bold text-slate-900 mb-2">{title}</h1>
       <p className="text-slate-600 text-sm mb-6">
-        Route <code className="bg-slate-100 text-airtel-red px-2 py-0.5 rounded font-mono">{location.pathname}</code> is scaffolded and will be activated in Frontend Checkpoint {stepNumber}.
+        Route <code className="bg-slate-100 text-accel-red px-2 py-0.5 rounded font-mono">{location.pathname}</code> is scaffolded and will be activated in Frontend Checkpoint {stepNumber}.
       </p>
 
       <div className="flex justify-center space-x-3">

@@ -1,6 +1,6 @@
 # Project Udyam Digital: Data Privacy & Protection Policy Note
 **Prepared in Compliance with the Digital Personal Data Protection (DPDP) Act, 2023**  
-*Bharti Airtel Limited · Enterprise Track A · Version 1.0 (November 2026)*
+*Bharti Accel Limited · Enterprise Track A · Version 1.0 (November 2026)*
 
 ---
 

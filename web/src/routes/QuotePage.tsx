@@ -140,7 +140,7 @@ export const QuotePage: React.FC = () => {
   if (quoteLoading) {
     return (
       <div className="max-w-4xl mx-auto py-16 text-center">
-        <div className="w-12 h-12 border-4 border-airtel-red border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <div className="w-12 h-12 border-4 border-accel-red border-t-transparent rounded-full animate-spin mx-auto mb-4" />
         <p className="text-slate-600 font-medium">Fetching verified quote from pricing engine...</p>
       </div>
     );
@@ -156,7 +156,7 @@ export const QuotePage: React.FC = () => {
         </p>
         <Link
           to="/chat"
-          className="bg-airtel-red text-white font-bold py-3 px-6 rounded-xl inline-flex items-center space-x-2"
+          className="bg-accel-red text-white font-bold py-3 px-6 rounded-xl inline-flex items-center space-x-2"
         >
           <span>Return to Advisor</span>
           <ArrowRight className="w-4 h-4" />
@@ -176,7 +176,7 @@ export const QuotePage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center space-x-2 bg-airtel-lightred text-airtel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-1.5">
+          <div className="inline-flex items-center space-x-2 bg-accel-lightred text-accel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Step 2 of 5 &bull; Transparent Quote</span>
           </div>
@@ -192,7 +192,7 @@ export const QuotePage: React.FC = () => {
           onClick={() => api.downloadQuotePdf(quote.quote_id)}
           className="inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm px-4 py-2.5 rounded-xl border border-slate-300 shadow-2xs tap-target transition-all"
         >
-          <Download className="w-4 h-4 text-airtel-red" />
+          <Download className="w-4 h-4 text-accel-red" />
           <span>{t("common.download_pdf")}</span>
         </button>
       </div>
@@ -260,11 +260,11 @@ export const QuotePage: React.FC = () => {
           </div>
 
           {/* First Month Total */}
-          <div className="bg-airtel-lightred/50 p-4 rounded-2xl border border-red-200">
-            <span className="text-xs font-bold text-airtel-red uppercase tracking-wider block mb-1">
+          <div className="bg-accel-lightred/50 p-4 rounded-2xl border border-red-200">
+            <span className="text-xs font-bold text-accel-red uppercase tracking-wider block mb-1">
               First Month Outflow
             </span>
-            <span className="text-2xl sm:text-3xl font-black text-airtel-red block">
+            <span className="text-2xl sm:text-3xl font-black text-accel-red block">
               {formatINR(quote.first_month_total)}
             </span>
             <span className="text-xs text-red-700/80 font-medium">Recurring + Setup combined</span>
@@ -286,7 +286,7 @@ export const QuotePage: React.FC = () => {
                 disabled={updateMutation.isPending}
                 className={`py-1.5 px-4 rounded-lg text-xs font-bold transition-all tap-target flex items-center justify-center ${
                   quote.term_months === months
-                    ? "bg-white text-airtel-red shadow-sm border border-slate-200"
+                    ? "bg-white text-accel-red shadow-sm border border-slate-200"
                     : "text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -310,7 +310,7 @@ export const QuotePage: React.FC = () => {
           </div>
         ) : (
           <div className="bg-slate-50 border border-slate-200 p-3.5 rounded-2xl flex items-center space-x-3 text-slate-700 text-xs">
-            <Shield className="w-4 h-4 text-airtel-red shrink-0" />
+            <Shield className="w-4 h-4 text-accel-red shrink-0" />
             <span>
               <strong>Enterprise SLA Included:</strong> 99.5% uptime guarantee, 4-hour MTTR resolution, and dedicated business relationship manager.
             </span>
@@ -321,7 +321,7 @@ export const QuotePage: React.FC = () => {
       {/* Active Line Items */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
         <h2 className="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center space-x-2">
-          <Layers className="w-4 h-4 text-airtel-red" />
+          <Layers className="w-4 h-4 text-accel-red" />
           <span>Configured Bundle Line Items</span>
         </h2>
 
@@ -392,7 +392,7 @@ export const QuotePage: React.FC = () => {
       {availableAddons.length > 0 && (
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
           <h2 className="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center space-x-2">
-            <Plus className="w-4 h-4 text-airtel-red" />
+            <Plus className="w-4 h-4 text-accel-red" />
             <span>Add Compatible Services & Hardware</span>
           </h2>
 
@@ -400,10 +400,10 @@ export const QuotePage: React.FC = () => {
             {availableAddons.slice(0, 6).map((addon) => (
               <div
                 key={addon.product_id}
-                className="p-4 rounded-2xl border border-slate-200 hover:border-airtel-red/30 bg-slate-50 hover:bg-airtel-lightred/20 flex items-center justify-between transition-all"
+                className="p-4 rounded-2xl border border-slate-200 hover:border-accel-red/30 bg-slate-50 hover:bg-accel-lightred/20 flex items-center justify-between transition-all"
               >
                 <div>
-                  <span className="text-xs font-bold text-airtel-red uppercase tracking-wide block">
+                  <span className="text-xs font-bold text-accel-red uppercase tracking-wide block">
                     {addon.category} ({addon.product_id})
                   </span>
                   <span className="text-sm font-bold text-slate-900 block leading-tight mt-0.5">
@@ -418,7 +418,7 @@ export const QuotePage: React.FC = () => {
                   type="button"
                   onClick={() => handleAddProduct(addon.product_id)}
                   disabled={updateMutation.isPending}
-                  className="px-3 py-1.5 bg-white hover:bg-airtel-red hover:text-white border border-slate-300 rounded-xl text-xs font-bold text-slate-800 shadow-2xs transition-all tap-target flex items-center space-x-1"
+                  className="px-3 py-1.5 bg-white hover:bg-accel-red hover:text-white border border-slate-300 rounded-xl text-xs font-bold text-slate-800 shadow-2xs transition-all tap-target flex items-center space-x-1"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add</span>
@@ -443,7 +443,7 @@ export const QuotePage: React.FC = () => {
           type="button"
           onClick={handleAcceptQuote}
           disabled={actionLoading}
-          className="w-full sm:w-auto bg-airtel-red hover:bg-airtel-darkred disabled:bg-slate-300 text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-all tap-target flex items-center justify-center space-x-2 active:scale-95"
+          className="w-full sm:w-auto bg-accel-red hover:bg-accel-darkred disabled:bg-slate-300 text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-all tap-target flex items-center justify-center space-x-2 active:scale-95"
         >
           <span>{actionLoading ? "Locking Quote..." : t("common.accept_quote")}</span>
           <ArrowRight className="w-5 h-5" />

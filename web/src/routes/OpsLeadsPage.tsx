@@ -108,7 +108,7 @@ export const OpsLeadsPage: React.FC = () => {
       {/* Header */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-airtel-red bg-airtel-lightred px-3 py-1 rounded-full mb-2">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-accel-red bg-accel-lightred px-3 py-1 rounded-full mb-2">
             <Users className="w-3.5 h-3.5" />
             <span>Back-Office Operations</span>
           </div>
@@ -129,7 +129,7 @@ export const OpsLeadsPage: React.FC = () => {
           </Link>
           <Link
             to="/ops/funnel"
-            className="px-4 py-2 bg-airtel-red hover:bg-airtel-darkred text-white text-xs font-bold rounded-xl shadow-sm transition-colors"
+            className="px-4 py-2 bg-accel-red hover:bg-accel-darkred text-white text-xs font-bold rounded-xl shadow-sm transition-colors"
           >
             Conversion Funnel
           </Link>
@@ -147,7 +147,7 @@ export const OpsLeadsPage: React.FC = () => {
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-airtel-red"
+          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-accel-red"
         >
           <option value="">All Cities</option>
           <option value="Bengaluru">Bengaluru (Tier 1)</option>
@@ -162,7 +162,7 @@ export const OpsLeadsPage: React.FC = () => {
         <select
           value={selectedSegment}
           onChange={(e) => setSelectedSegment(e.target.value)}
-          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-airtel-red"
+          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-accel-red"
         >
           <option value="">All Segments</option>
           <option value="Retail & POS">Retail & POS</option>
@@ -175,7 +175,7 @@ export const OpsLeadsPage: React.FC = () => {
         <select
           value={selectedException}
           onChange={(e) => setSelectedException(e.target.value)}
-          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-airtel-red"
+          className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold focus:outline-none focus:ring-1 focus:ring-accel-red"
         >
           <option value="">All Exception States</option>
           <option value="PAYMENT_FAILED">Payment Failed (UPI/Mandate)</option>
@@ -192,7 +192,7 @@ export const OpsLeadsPage: React.FC = () => {
               setSelectedSegment("");
               setSelectedException("");
             }}
-            className="text-xs text-airtel-red font-bold hover:underline ml-auto"
+            className="text-xs text-accel-red font-bold hover:underline ml-auto"
           >
             Clear Filters
           </button>
@@ -205,7 +205,7 @@ export const OpsLeadsPage: React.FC = () => {
         <div className="lg:col-span-2 space-y-3">
           {leadsLoading ? (
             <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
-              <div className="inline-block w-8 h-8 border-4 border-airtel-red border-t-transparent rounded-full animate-spin mb-3" />
+              <div className="inline-block w-8 h-8 border-4 border-accel-red border-t-transparent rounded-full animate-spin mb-3" />
               <p className="text-sm font-semibold text-slate-600">Loading intelligent lead queue...</p>
             </div>
           ) : leads && leads.length > 0 ? (
@@ -218,7 +218,7 @@ export const OpsLeadsPage: React.FC = () => {
                 }}
                 className={`bg-white rounded-xl p-4 border transition-all cursor-pointer shadow-sm hover:shadow-md ${
                   selectedLead?.lead_id === lead.lead_id
-                    ? "border-airtel-red ring-1 ring-airtel-red bg-red-50/20"
+                    ? "border-accel-red ring-1 ring-accel-red bg-red-50/20"
                     : "border-slate-200 hover:border-slate-300"
                 }`}
               >
@@ -284,7 +284,7 @@ export const OpsLeadsPage: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm sticky top-20 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <h3 className="font-bold text-slate-900 text-base flex items-center space-x-2">
-                  <Building2 className="w-4 h-4 text-airtel-red" />
+                  <Building2 className="w-4 h-4 text-accel-red" />
                   <span>Lead Intelligence</span>
                 </h3>
                 <span className="font-mono text-xs font-bold text-slate-500">
@@ -362,7 +362,7 @@ export const OpsLeadsPage: React.FC = () => {
                 </h4>
                 <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
                   <p className="text-slate-600 italic">
-                    "{selectedLead.conversation_summary || "Lead actively exploring Airtel Biz Fibre bundles."}"
+                    "{selectedLead.conversation_summary || "Lead actively exploring Accel Biz Fibre bundles."}"
                   </p>
                 </div>
               </div>
@@ -405,7 +405,7 @@ export const OpsLeadsPage: React.FC = () => {
                 {selectedLead.draft_quote && (
                   <Link
                     to={`/quote/${selectedLead.draft_quote.quote_id}`}
-                    className="flex-1 py-2 text-center text-xs font-bold bg-airtel-lightred text-airtel-red rounded-lg hover:bg-red-100 transition-colors"
+                    className="flex-1 py-2 text-center text-xs font-bold bg-accel-lightred text-accel-red rounded-lg hover:bg-red-100 transition-colors"
                   >
                     View Active Quote
                   </Link>

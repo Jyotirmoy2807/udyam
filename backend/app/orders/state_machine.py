@@ -141,7 +141,7 @@ class OrderStateMachine:
                 lead_id=order.lead_id,
                 channel="SMS",
                 template="ORDER_ACTIVATED",
-                body=f"Your Airtel Udyam Digital order {order.order_id} is now ACTIVE! Welcome to Airtel Business.",
+                body=f"Your Accel Udyam Digital order {order.order_id} is now ACTIVE! Welcome to Accel Business.",
             )
 
         elif target_status in ("CANCELLED", "FAILED"):

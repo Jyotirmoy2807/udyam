@@ -100,7 +100,7 @@ def test_ops_kyc_supervisor_review_and_decision(client, db):
     dec_res = client.post(f"/ops/kyc/{case_id}/decision", json={
         "decision": "APPROVE",
         "reason": "Entity verified via state VAT/commercial tax portal",
-        "actor": "supervisor@airtel.com",
+        "actor": "supervisor@accel.com",
     })
     assert dec_res.status_code == 200
     assert dec_res.json()["verdict"] == "PASS"
@@ -157,7 +157,7 @@ def test_whatsapp_webhook_interactions(client, db):
     upload_res = client.post("/webhooks/whatsapp", json={
         "phone": test_phone,
         "lead_id": lead_id,
-        "media_url": "https://storage.airtel.in/specimens/k01_gst.png",
+        "media_url": "https://storage.accel.in/specimens/k01_gst.png",
     })
     assert upload_res.status_code == 200
     resp3 = upload_res.json()

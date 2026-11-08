@@ -28,7 +28,7 @@ def test_guardrail_blocks_hallucinated_product_id():
     assert not result.is_valid
     assert result.fallback_used
     assert "P99" in result.hallucinated_products
-    assert "customized Airtel Business Digital Bundle" in result.sanitized_content
+    assert "customized Accel Business Digital Bundle" in result.sanitized_content
 
 
 def test_guardrail_blocks_fake_price():
@@ -45,7 +45,7 @@ def test_guardrail_blocks_fake_price():
     assert not result.is_valid
     assert result.fallback_used
     assert 999 in result.hallucinated_numbers
-    assert "customized Airtel Business Digital Bundle" in result.sanitized_content
+    assert "customized Accel Business Digital Bundle" in result.sanitized_content
 
 
 def test_guardrail_blocks_devanagari_hallucinated_price():
@@ -60,7 +60,7 @@ def test_guardrail_blocks_devanagari_hallucinated_price():
     assert not result.is_valid
     assert result.fallback_used
     assert 999 in result.hallucinated_numbers
-    assert "सत्यापित एयरटेल बिजनेस डिजिटल बंडल" in result.sanitized_content
+    assert "सत्यापित एक्सेल बिजनेस डिजिटल बंडल" in result.sanitized_content
 
 
 def test_guardrail_allows_strictly_compliant_content():

@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-white to-slate-100 rounded-3xl p-6 md:p-10 border border-slate-200/80 shadow-sm relative overflow-hidden">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center space-x-2 bg-airtel-lightred text-airtel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center space-x-2 bg-accel-lightred text-accel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>YTL Hackathon 2026 &bull; Enterprise Track A</span>
           </div>
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <Link
               to="/start"
-              className="inline-flex items-center justify-center space-x-2 bg-airtel-red hover:bg-airtel-darkred text-white font-bold text-base px-6 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
+              className="inline-flex items-center justify-center space-x-2 bg-accel-red hover:bg-accel-darkred text-white font-bold text-base px-6 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
             >
               <span>{t("nav.start")}</span>
               <ArrowRight className="w-5 h-5" />
@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
               to="/chat"
               className="inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 text-slate-800 font-bold text-base px-6 py-3.5 rounded-xl border border-slate-300 shadow-sm transition-all"
             >
-              <Bot className="w-5 h-5 text-airtel-red" />
+              <Bot className="w-5 h-5 text-accel-red" />
               <span>{t("nav.chat")}</span>
             </Link>
           </div>
@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
         <div className="flex items-center justify-between pb-4 border-b border-slate-100">
           <div className="flex items-center space-x-3">
-            <Activity className="w-5 h-5 text-airtel-red" />
+            <Activity className="w-5 h-5 text-accel-red" />
             <h2 className="text-lg font-bold text-slate-900">{t("health.title")}</h2>
           </div>
           <span
@@ -133,7 +133,7 @@ const HomePage: React.FC = () => {
       {/* Customer Journey Roadmap */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
         <h3 className="text-base font-bold text-slate-900 mb-4 flex items-center space-x-2">
-          <Zap className="w-4 h-4 text-airtel-red" />
+          <Zap className="w-4 h-4 text-accel-red" />
           <span>Complete SMB Onboarding Lifecycle</span>
         </h3>
 
@@ -149,9 +149,9 @@ const HomePage: React.FC = () => {
             <Link
               key={item.step}
               to={item.route}
-              className="p-3 bg-slate-50 hover:bg-airtel-lightred border border-slate-200 hover:border-airtel-red/30 rounded-xl flex flex-col items-center text-center transition-all group"
+              className="p-3 bg-slate-50 hover:bg-accel-lightred border border-slate-200 hover:border-accel-red/30 rounded-xl flex flex-col items-center text-center transition-all group"
             >
-              <item.icon className="w-5 h-5 text-slate-600 group-hover:text-airtel-red mb-1.5 transition-colors" />
+              <item.icon className="w-5 h-5 text-slate-600 group-hover:text-accel-red mb-1.5 transition-colors" />
               <span className="text-xs font-bold text-slate-800">{item.label}</span>
               <span className="text-[10px] text-slate-400">Step {item.step}</span>
             </Link>

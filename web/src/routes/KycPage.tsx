@@ -202,7 +202,7 @@ export const KycPage: React.FC = () => {
           Consent
         </Link>
         <span>&bull;</span>
-        <span className="text-airtel-red">Step 4: Smart KYC & Document Verification</span>
+        <span className="text-accel-red">Step 4: Smart KYC & Document Verification</span>
       </div>
 
       {/* Floating Demo Specimen Quick-Loader */}
@@ -246,7 +246,7 @@ export const KycPage: React.FC = () => {
         <div className="flex items-start justify-between mb-4">
           <div>
             <h2 className="text-xl font-black text-slate-900 tracking-tight flex items-center space-x-2">
-              <Building className="w-5 h-5 text-airtel-red" />
+              <Building className="w-5 h-5 text-accel-red" />
               <span>1. Enter-Then-Verify Enterprise Identifiers</span>
             </h2>
             <p className="text-xs text-slate-500 mt-1">
@@ -273,7 +273,7 @@ export const KycPage: React.FC = () => {
               value={gstinInput}
               onChange={(e) => setGstinInput(e.target.value.toUpperCase())}
               placeholder="e.g. 27XUIXG0767D1ZP"
-              className="w-full h-12 px-4 rounded-xl border border-slate-300 font-mono text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-airtel-red"
+              className="w-full h-12 px-4 rounded-xl border border-slate-300 font-mono text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-accel-red"
             />
           </div>
 
@@ -287,7 +287,7 @@ export const KycPage: React.FC = () => {
               value={udyamInput}
               onChange={(e) => setUdyamInput(e.target.value.toUpperCase())}
               placeholder="e.g. UDYAM-MH-01-0012345"
-              className="w-full h-12 px-4 rounded-xl border border-slate-300 font-mono text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-airtel-red"
+              className="w-full h-12 px-4 rounded-xl border border-slate-300 font-mono text-sm tracking-wider uppercase focus:outline-none focus:ring-2 focus:ring-accel-red"
             />
           </div>
         </div>
@@ -338,7 +338,7 @@ export const KycPage: React.FC = () => {
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
         <div className="mb-4">
           <h2 className="text-xl font-black text-slate-900 tracking-tight flex items-center space-x-2">
-            <FileText className="w-5 h-5 text-airtel-red" />
+            <FileText className="w-5 h-5 text-accel-red" />
             <span>2. Upload Verification Documents</span>
           </h2>
           <p className="text-xs text-slate-500 mt-1">
@@ -358,7 +358,7 @@ export const KycPage: React.FC = () => {
                   doc
                     ? "bg-slate-50/70 border-slate-300"
                     : slotCfg.required
-                    ? "bg-white border-dashed border-slate-300 hover:border-airtel-red/40"
+                    ? "bg-white border-dashed border-slate-300 hover:border-accel-red/40"
                     : "bg-slate-50/40 border-dashed border-slate-200"
                 }`}
               >
@@ -395,7 +395,7 @@ export const KycPage: React.FC = () => {
                           href={doc.view_url}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-airtel-red hover:underline text-[11px] font-bold flex items-center space-x-1"
+                          className="text-accel-red hover:underline text-[11px] font-bold flex items-center space-x-1"
                         >
                           <Eye className="w-3.5 h-3.5" />
                           <span>View Doc</span>
@@ -450,7 +450,7 @@ export const KycPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h2 className="text-xl font-black text-slate-900 tracking-tight flex items-center space-x-2">
-              <ShieldCheck className="w-5 h-5 text-airtel-red" />
+              <ShieldCheck className="w-5 h-5 text-accel-red" />
               <span>3. Deterministic KYC Evaluation</span>
             </h2>
             <p className="text-xs text-slate-500 mt-1">
@@ -462,7 +462,7 @@ export const KycPage: React.FC = () => {
             type="button"
             onClick={() => verifyMutation.mutate()}
             disabled={verifyMutation.isPending}
-            className="h-12 px-6 bg-airtel-red hover:bg-airtel-darkred text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 tap-target"
+            className="h-12 px-6 bg-accel-red hover:bg-accel-darkred text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 tap-target"
           >
             <RefreshCw className={`w-4 h-4 ${verifyMutation.isPending ? "animate-spin" : ""}`} />
             <span>{verifyMutation.isPending ? "Evaluating Pipeline..." : "Run Smart Verification"}</span>

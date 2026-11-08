@@ -45,7 +45,7 @@ def generate_quote_html(quote: Quote, lead: Lead | None = None, profile: Busines
     <html>
     <head>
         <meta charset="utf-8">
-        <title>Airtel Business Digital Bundle Quote - {quote.id}</title>
+        <title>Accel Business Digital Bundle Quote - {quote.id}</title>
         <style>
             body {{
                 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -109,7 +109,7 @@ def generate_quote_html(quote: Quote, lead: Lead | None = None, profile: Busines
     <body>
         <div class="header">
             <div>
-                <div class="brand">airtel business</div>
+                <div class="brand">accel business</div>
                 <div style="font-size: 13px; color: #64748b;">Project Udyam Digital - Official Service Quote</div>
             </div>
             <div style="text-align: right;">
@@ -160,7 +160,7 @@ def generate_quote_html(quote: Quote, lead: Lead | None = None, profile: Busines
 
         <div class="signatory-box">
             <div>
-                <p style="font-size: 12px; color: #64748b; margin-bottom: 40px;">Authorized Signatory (Airtel Enterprise)</p>
+                <p style="font-size: 12px; color: #64748b; margin-bottom: 40px;">Authorized Signatory (Accel Enterprise)</p>
                 <div style="border-top: 1px solid #94a3b8; width: 200px;"></div>
                 <p style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Digitally Verified & Stamped</p>
             </div>
@@ -208,7 +208,7 @@ def generate_quote_pdf_bytes(quote: Quote, lead: Lead | None = None, profile: Bu
         textColor=colors.HexColor("#e11d48"),
         spaceAfter=6,
     )
-    story.append(Paragraph("airtel business", title_style))
+    story.append(Paragraph("accel business", title_style))
     story.append(Paragraph(f"Project Udyam Digital - Official Service Quote (Version {quote.version})", styles["Normal"]))
     story.append(Spacer(1, 15))
 

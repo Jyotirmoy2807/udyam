@@ -188,22 +188,22 @@ def seed_udyam_registry(session) -> int:
 def seed_partners(session) -> int:
     partners = [
         {
-            "name": "Airtel Enterprise Direct Partner North",
+            "name": "Accel Enterprise Direct Partner North",
             "cities": ["Delhi", "Ludhiana", "Lucknow", "Jaipur", "Chandigarh"],
             "segments": ["micro", "professional_offices", "small_multi_site", "small_manufacturers"],
         },
         {
-            "name": "Airtel Enterprise Direct Partner South",
+            "name": "Accel Enterprise Direct Partner South",
             "cities": ["Bengaluru", "Chennai", "Kochi", "Hyderabad", "Visakhapatnam"],
             "segments": ["micro", "professional_offices", "small_multi_site", "small_manufacturers"],
         },
         {
-            "name": "Airtel Enterprise Direct Partner West",
+            "name": "Accel Enterprise Direct Partner West",
             "cities": ["Mumbai", "Pune", "Ahmedabad", "Nagpur", "Surat"],
             "segments": ["micro", "professional_offices", "small_multi_site", "small_manufacturers"],
         },
         {
-            "name": "Airtel Enterprise Direct Partner East",
+            "name": "Accel Enterprise Direct Partner East",
             "cities": ["Kolkata", "Patna", "Bhubaneswar", "Guwahati", "Ranchi"],
             "segments": ["micro", "professional_offices", "small_multi_site", "small_manufacturers"],
         },

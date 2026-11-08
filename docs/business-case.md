@@ -1,11 +1,11 @@
 # Project Udyam Digital: Executive Business Case & Pitch Deck
-**YTL Hackathon 2026 · Enterprise Track A (Airtel Business)**  
+**YTL Hackathon 2026 · Enterprise Track A (Accel Business)**  
 *Digital-First Acquisition & Onboarding for Indian Small & Medium Enterprises*
 
 ---
 
 ## Executive Summary
-In Q1 FY2026 (April–June 2026), Airtel Business recorded **5,000 inbound SMB leads** across 6 key commercial metros and tier-2 business clusters. Of these 5,000 leads, **only 368 activated (7.36%)**, requiring an average of **17.6 days to activate**, **3.0 status-chase support calls per customer**, and incurring a high blended Customer Acquisition Cost (**₹15,000 CAC**). Furthermore, customers forced to chase status 4+ times suffered a staggering **23% 6-month churn rate**.
+In Q1 FY2026 (April–June 2026), Accel Business recorded **5,000 inbound SMB leads** across 6 key commercial metros and tier-2 business clusters. Of these 5,000 leads, **only 368 activated (7.36%)**, requiring an average of **17.6 days to activate**, **3.0 status-chase support calls per customer**, and incurring a high blended Customer Acquisition Cost (**₹15,000 CAC**). Furthermore, customers forced to chase status 4+ times suffered a staggering **23% 6-month churn rate**.
 
 **Project Udyam Digital** transforms this fragmented, high-friction, field-dependent cycle into a **digital-first, conversational, mobile PWA experience** backed by automated catalogue guardrails, instant CV/OCR Smart KYC, NPCI e-Sign & UPI Autopay, and real-time proactive tracking.
 
@@ -102,7 +102,7 @@ Comparing historical April–June 2026 data with Project Udyam Digital:
 ### Slide 10: Future Roadmap & Scale Plan
 - **Phase 1 (Immediate Pilot)**: Deploy PWA & WhatsApp bot across Tier-1 hubs (Bengaluru, Mumbai, Delhi) with Top 20 Channel Partners.
 - **Phase 2 (DigiLocker Integration)**: Direct DigiLocker API integration to eliminate scan uploads entirely for 80% of verified applicants.
-- **Phase 3 (Live OSS/BSS Provisioning)**: Direct webhooks into Airtel's inventory and GIS mapping systems for automated FTTH port reservation.
+- **Phase 3 (Live OSS/BSS Provisioning)**: Direct webhooks into Accel's inventory and GIS mapping systems for automated FTTH port reservation.
 
 ---
 

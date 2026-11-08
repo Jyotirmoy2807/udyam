@@ -39,7 +39,7 @@ export const WhatsAppSimPage: React.FC = () => {
     {
       id: "msg-1",
       sender: "bot",
-      text: "Namaste! Welcome to *Airtel Business Enterprise Advisor* on WhatsApp.\n\nI can instantly help you with:\n1. Custom high-speed corporate fiber & 5G AirFiber plans\n2. Generating official PDF quotes\n3. Instant KYC document upload & registry verification\n\nPlease tell us about your business or tap a quick action below:",
+      text: "Namaste! Welcome to *Accel Business Enterprise Advisor* on WhatsApp.\n\nI can instantly help you with:\n1. Custom high-speed corporate fiber & 5G AirFiber plans\n2. Generating official PDF quotes\n3. Instant KYC document upload & registry verification\n\nPlease tell us about your business or tap a quick action below:",
       time: "10:00 AM",
       buttons: [
         { id: "VIEW_PLANS", title: "View Biz Fibre Plans" },
@@ -163,7 +163,7 @@ export const WhatsAppSimPage: React.FC = () => {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <div className="relative">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-airtel-red font-black text-xl shadow-inner">
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-accel-red font-black text-xl shadow-inner">
                 a
               </div>
               <div className="absolute -bottom-0.5 -right-0.5 bg-emerald-500 rounded-full p-0.5 border border-white">
@@ -172,7 +172,7 @@ export const WhatsAppSimPage: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center space-x-1">
-                <span className="font-bold text-sm leading-tight">Airtel Business</span>
+                <span className="font-bold text-sm leading-tight">Accel Business</span>
                 <span className="bg-emerald-400 text-white rounded-full p-0.5" title="Official Enterprise Account">
                   <CheckCheck className="w-2.5 h-2.5" />
                 </span>
@@ -260,7 +260,7 @@ export const WhatsAppSimPage: React.FC = () => {
           {isLoading && (
             <div className="flex items-center space-x-1.5 text-xs text-slate-500 bg-white/80 backdrop-blur-xs px-3 py-1.5 rounded-full w-fit">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Airtel Business is typing...</span>
+              <span>Accel Business is typing...</span>
             </div>
           )}
 
@@ -280,7 +280,7 @@ export const WhatsAppSimPage: React.FC = () => {
           {/* Quick Specimen Document Upload Simulation */}
           <button
             type="button"
-            onClick={() => handleSendMessage(undefined, undefined, "https://minio.airtel.in/specimens/k04_bill.png")}
+            onClick={() => handleSendMessage(undefined, undefined, "https://minio.accel.in/specimens/k04_bill.png")}
             disabled={isLoading}
             className="p-2 text-slate-500 hover:text-emerald-700"
             title="Simulate Document Attachment"

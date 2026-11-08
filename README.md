@@ -1,6 +1,6 @@
 # Project Udyam Digital
 ### Digital-First Acquisition & Intelligent Onboarding for Indian MSMEs
-**YTL Hackathon 2026 · Enterprise Track A (Airtel Business)**
+**YTL Hackathon 2026 · Enterprise Track A (Accel Business)**
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue?logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -16,7 +16,7 @@
 
 ## Executive Summary & The Problem
 
-In Q1 FY2026 (April–June 2026), an empirical audit of **5,000 inbound Airtel Business SMB leads** across 6 major commercial hubs revealed that **only 368 converted to activated connections (7.36% conversion rate)**. The acquisition cycle was plagued by offline friction:
+In Q1 FY2026 (April–June 2026), an empirical audit of **5,000 inbound Accel Business SMB leads** across 6 major commercial hubs revealed that **only 368 converted to activated connections (7.36% conversion rate)**. The acquisition cycle was plagued by offline friction:
 - **17.6 days** average time from lead to activation.
 - **3.0 status-chase calls** per customer, driving a **23% churn rate** for customers chasing status 4+ times.
 - **₹15,000 blended Customer Acquisition Cost (CAC)**.
@@ -286,4 +286,4 @@ For complete compliance details, refer to [docs/privacy-note.md](docs/privacy-no
 
 ## License & Acknowledgements
 Built for the **YTL Hackathon 2026 (Enterprise Track A)**.  
-Copyright &copy; 2026 Bharti Airtel Limited. All rights reserved.
+Copyright &copy; 2026 Bharti Accel Limited. All rights reserved.

@@ -224,14 +224,14 @@ def test_ops_kyc_override(client, db):
     override_res = client.post(f"/ops/kyc/{case_id}/override", json={
         "new_verdict": "PASS",
         "reason": "Clear manual utility bill verification by supervisor",
-        "actor": "supervisor@airtel.com",
+        "actor": "supervisor@accel.com",
     })
     assert override_res.status_code == 200
     assert override_res.json()["new_verdict"] == "PASS"
 
     audit = db.query(AuditLog).filter(AuditLog.target == f"kyc_case:{case_id}").first()
     assert audit is not None
-    assert audit.actor == "supervisor@airtel.com"
+    assert audit.actor == "supervisor@accel.com"
 
 
 def test_zero_unmasked_pii_in_api_responses(client):

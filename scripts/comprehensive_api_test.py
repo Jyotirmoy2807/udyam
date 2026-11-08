@@ -474,7 +474,7 @@ def run_tests():
         r = client.post(f"/ops/kyc/{case_id}/override", json={
             "new_verdict": "PASS",
             "reason": "Supervisor manual review confirmed valid utility bill",
-            "actor": "senior_ops@airtel.com"
+            "actor": "senior_ops@accel.com"
         })
         override_data = r.json()
         log_test(
@@ -504,7 +504,7 @@ def run_tests():
             "quote_id": quote_id,
             "lead_id": lead_micro_id,
             "status": "AUTHORIZED",
-            "umn": "airtel.business@upi"
+            "umn": "accel.business@upi"
         })
         log_test(
             40, "POST /webhooks/mandate (Inbound UPI Mandate webhook callback)",

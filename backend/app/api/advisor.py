@@ -148,7 +148,7 @@ async def stream_chat(lead_id: UUID, message: str, lang: str = "en", db: Session
     async def event_generator():
         try:
             if not settings.GROQ_API_KEY or settings.GROQ_API_KEY == "gsk_replace_with_real_key":
-                demo_tokens = ["Namaste! ", "Based ", "on ", "your ", "business, ", "we ", "recommend ", "Airtel ", "Broadband."]
+                demo_tokens = ["Namaste! ", "Based ", "on ", "your ", "business, ", "we ", "recommend ", "Accel ", "Broadband."]
                 for tok in demo_tokens:
                     yield f"data: {json.dumps({'token': tok})}\n\n"
                 yield "data: [DONE]\n\n"
@@ -159,7 +159,7 @@ async def stream_chat(lead_id: UUID, message: str, lang: str = "en", db: Session
                 yield f"data: {json.dumps({'token': token})}\n\n"
             yield "data: [DONE]\n\n"
         except Exception:
-            demo_tokens = ["Namaste! ", "Based ", "on ", "your ", "business, ", "we ", "recommend ", "Airtel ", "Broadband."]
+            demo_tokens = ["Namaste! ", "Based ", "on ", "your ", "business, ", "we ", "recommend ", "Accel ", "Broadband."]
             for tok in demo_tokens:
                 yield f"data: {json.dumps({'token': tok})}\n\n"
             yield "data: [DONE]\n\n"

@@ -56,7 +56,7 @@ class OrderSimulator:
             channel="SMS",
             template="SWAP_NOTIFICATION",
             body=(
-                f"Airtel Update: Fiber is currently unfeasible at your location. "
+                f"Accel Update: Fiber is currently unfeasible at your location. "
                 f"We have seamlessly updated your connection to high-speed 5G AirFiber ({fallback_product_id}) at no extra cost."
             ),
         )
@@ -105,7 +105,7 @@ class OrderSimulator:
             channel="SMS",
             template="DELAY_NOTIFICATION",
             body=(
-                f"Airtel Update: Your installation has been rescheduled due to '{reason}'. "
+                f"Accel Update: Your installation has been rescheduled due to '{reason}'. "
                 f"New estimated delivery date: {order.eta}."
             ),
         )
@@ -144,7 +144,7 @@ class OrderSimulator:
             lead_id=order.lead_id,
             channel="SMS",
             template="PAYMENT_RETRY",
-            body=f"Airtel Alert: Auto-debit failed for order {order_id} ({reason}). Please use the link sent to complete payment.",
+            body=f"Accel Alert: Auto-debit failed for order {order_id} ({reason}). Please use the link sent to complete payment.",
         )
 
         self.db.commit()

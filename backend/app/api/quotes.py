@@ -176,7 +176,7 @@ def api_get_quote_pdf(quote_id: UUID, db: Session = Depends(get_db)):
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",
-        headers={"Content-Disposition": f"attachment; filename=Airtel_Quote_{quote_id}.pdf"},
+        headers={"Content-Disposition": f"attachment; filename=Accel_Quote_{quote_id}.pdf"},
     )
 
 
@@ -195,7 +195,7 @@ def api_request_esign(quote_id: UUID, req: EsignRequest, db: Session = Depends(g
         lead_id=quote.lead_id,
         channel="sms",
         template="ESIGN_INVITE",
-        body=f"Please sign your Airtel Business Digital Bundle agreement: https://udyam.airtel.in/sign/{esign_id}",
+        body=f"Please sign your Accel Business Digital Bundle agreement: https://udyam.accel.in/sign/{esign_id}",
     )
 
     emit(

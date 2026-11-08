@@ -1,5 +1,5 @@
 # Project Udyam Digital: 3-Minute Demo Video & Walkthrough Script
-**YTL Hackathon 2026 · Enterprise Track A (Airtel Business)**  
+**YTL Hackathon 2026 · Enterprise Track A (Accel Business)**  
 *Target Timing: Exactly 3 Minutes (180 Seconds)*
 
 ---
@@ -9,7 +9,7 @@
 ### Act 1: The Problem & The Baseline (0:00 – 0:25)
 - **Visual**: Start on `/` (Home Page) showing the Executive Benchmark Card.
 - **Narrator**:
-  > *"Welcome to Project Udyam Digital for Airtel Business. In Q1 2026, out of 5,000 SMB leads, only 368 activated — a dismal 7.4% conversion rate. The root causes were offline sales visits, 18-day activation waits, complex quotes, and tedious paperwork that caused 3 chase calls per customer and a 23% churn rate. Today, we show you how Udyam Digital transforms this into a 5-minute digital-first onboarding experience."*
+  > *"Welcome to Project Udyam Digital for Accel Business. In Q1 2026, out of 5,000 SMB leads, only 368 activated — a dismal 7.4% conversion rate. The root causes were offline sales visits, 18-day activation waits, complex quotes, and tedious paperwork that caused 3 chase calls per customer and a 23% churn rate. Today, we show you how Udyam Digital transforms this into a 5-minute digital-first onboarding experience."*
 - **Action**: Tap **"Start Instant Journey"** or navigate to `/start`.
 
 ---

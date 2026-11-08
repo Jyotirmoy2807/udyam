@@ -50,15 +50,15 @@ class GuardrailResult:
 # Multilingual deterministic fallback templates
 FALLBACK_TEMPLATES = {
     "en": (
-        "Based on your requirements, here is your customized Airtel Business Digital Bundle. "
+        "Based on your requirements, here is your customized Accel Business Digital Bundle. "
         "Please review the verified pricing details above or proceed directly to your official quote."
     ),
     "hi": (
-        "आपकी आवश्यकताओं के आधार पर, यह आपका सत्यापित एयरटेल बिजनेस डिजिटल बंडल है। "
+        "आपकी आवश्यकताओं के आधार पर, यह आपका सत्यापित एक्सेल बिजनेस डिजिटल बंडल है। "
         "कृपया ऊपर दिए गए प्रमाणित मूल्य विवरण की समीक्षा करें और अपना आधिकारिक कोटेशन प्राप्त करें।"
     ),
     "mr": (
-        "तुमच्या गरजांनुसार, हा तुमचा अधिकृत एअरटेल बिझनेस डिजिटल बंडल आहे. "
+        "तुमच्या गरजांनुसार, हा तुमचा अधिकृत एक्सेल बिझनेस डिजिटल बंडल आहे. "
         "कृपया वरील प्रमाणित किमती तपासा आणि तुमचे कोटेशन पुढे सुरू ठेवा."
     ),
 }

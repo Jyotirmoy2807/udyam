@@ -104,7 +104,7 @@ export const StartPage: React.FC = () => {
     <div className="max-w-xl mx-auto py-4">
       {/* Step Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center space-x-2 bg-airtel-lightred text-airtel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+        <div className="inline-flex items-center space-x-2 bg-accel-lightred text-accel-red text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Step 1 of 5 &bull; Instant Access</span>
         </div>
@@ -141,7 +141,7 @@ export const StartPage: React.FC = () => {
                   onClick={() => handleLanguageSelect(lang.code)}
                   className={`p-3 rounded-xl border text-left transition-all tap-target flex flex-col justify-center ${
                     isSelected
-                      ? "border-airtel-red bg-airtel-lightred text-airtel-red font-bold shadow-sm"
+                      ? "border-accel-red bg-accel-lightred text-accel-red font-bold shadow-sm"
                       : "border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800"
                   }`}
                 >
@@ -225,7 +225,7 @@ export const StartPage: React.FC = () => {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
                     placeholder="9876543210"
-                    className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-airtel-red focus:border-transparent text-base font-semibold text-slate-900 tracking-wider tap-target"
+                    className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-accel-red focus:border-transparent text-base font-semibold text-slate-900 tracking-wider tap-target"
                     required
                   />
                 </div>
@@ -237,7 +237,7 @@ export const StartPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading || phone.length < 10}
-                className="w-full bg-airtel-red hover:bg-airtel-darkred disabled:bg-slate-300 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 tap-target active:scale-95"
+                className="w-full bg-accel-red hover:bg-accel-darkred disabled:bg-slate-300 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 tap-target active:scale-95"
               >
                 <span>{loading ? "Sending OTP..." : "Get Verification OTP"}</span>
                 <ArrowRight className="w-5 h-5" />
@@ -270,7 +270,7 @@ export const StartPage: React.FC = () => {
                   value={otpCode}
                   onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
                   placeholder="123456"
-                  className="w-full px-4 py-3 text-center text-2xl font-black font-mono tracking-widest rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-airtel-red text-slate-900 tap-target"
+                  className="w-full px-4 py-3 text-center text-2xl font-black font-mono tracking-widest rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-accel-red text-slate-900 tap-target"
                   required
                 />
                 <span className="text-[11px] text-slate-500 mt-1 text-center block">

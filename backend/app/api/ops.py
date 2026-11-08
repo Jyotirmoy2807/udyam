@@ -37,13 +37,13 @@ router = APIRouter(prefix="/ops", tags=["Operations & Audit"])
 class KycOverrideRequest(BaseModel):
     new_verdict: str  # PASS or NEEDS_FIX
     reason: str
-    actor: str = "ops_reviewer@airtel.com"
+    actor: str = "ops_reviewer@accel.com"
 
 
 class KycDecisionRequest(BaseModel):
     decision: str = Field(description="APPROVE or REJECT")
     reason: str
-    actor: str = "supervisor@airtel.com"
+    actor: str = "supervisor@accel.com"
 
 
 class AssignPartnerRequest(BaseModel):
@@ -229,7 +229,7 @@ def assign_ops_lead(lead_id: UUID, req: AssignPartnerRequest, db: Session = Depe
 
     # Audit log
     audit = AuditLog(
-        actor="ops_lead_manager@airtel.com",
+        actor="ops_lead_manager@accel.com",
         role="ops_admin",
         action="LEAD_ASSIGNED",
         target=f"lead:{lead_id}",
@@ -326,7 +326,7 @@ def get_kyc_review_cases(case_id: UUID | None = None, db: Session = Depends(get_
 
             # Record audit log for document inspection
             audit = AuditLog(
-                actor="ops_supervisor@airtel.com",
+                actor="ops_supervisor@accel.com",
                 role="ops_reviewer",
                 action="PREVIEW_KYC_DOCUMENT",
                 target=f"document:{d.id}",

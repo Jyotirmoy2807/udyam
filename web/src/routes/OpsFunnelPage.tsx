@@ -69,7 +69,7 @@ export const OpsFunnelPage: React.FC = () => {
       {/* Header */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-airtel-red bg-airtel-lightred px-3 py-1 rounded-full mb-2">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-accel-red bg-accel-lightred px-3 py-1 rounded-full mb-2">
             <BarChart3 className="w-3.5 h-3.5" />
             <span>Executive Insights & Impact</span>
           </div>
@@ -176,7 +176,7 @@ export const OpsFunnelPage: React.FC = () => {
         <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-xs font-bold text-slate-500">
             <span>Acquisition Cost</span>
-            <DollarSign className="w-4 h-4 text-airtel-red" />
+            <DollarSign className="w-4 h-4 text-accel-red" />
           </div>
           <div className="flex items-baseline space-x-2">
             <span className="text-3xl font-black text-slate-950">
@@ -199,7 +199,7 @@ export const OpsFunnelPage: React.FC = () => {
           onClick={() => setActiveTab("funnel")}
           className={`pb-3 px-3 transition-colors border-b-2 ${
             activeTab === "funnel"
-              ? "border-airtel-red text-airtel-red"
+              ? "border-accel-red text-accel-red"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -209,7 +209,7 @@ export const OpsFunnelPage: React.FC = () => {
           onClick={() => setActiveTab("events")}
           className={`pb-3 px-3 transition-colors border-b-2 ${
             activeTab === "events"
-              ? "border-airtel-red text-airtel-red"
+              ? "border-accel-red text-accel-red"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -219,7 +219,7 @@ export const OpsFunnelPage: React.FC = () => {
           onClick={() => setActiveTab("outbox")}
           className={`pb-3 px-3 transition-colors border-b-2 ${
             activeTab === "outbox"
-              ? "border-airtel-red text-airtel-red"
+              ? "border-accel-red text-accel-red"
               : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
@@ -280,7 +280,7 @@ export const OpsFunnelPage: React.FC = () => {
                           ? "bg-slate-800"
                           : idx >= 6
                           ? "bg-emerald-600"
-                          : "bg-airtel-red"
+                          : "bg-accel-red"
                       }`}
                       style={{ width: `${pct}%` }}
                     />
@@ -304,7 +304,7 @@ export const OpsFunnelPage: React.FC = () => {
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div>
               <h3 className="font-bold text-slate-900 text-base flex items-center space-x-2">
-                <Activity className="w-4 h-4 text-airtel-red" />
+                <Activity className="w-4 h-4 text-accel-red" />
                 <span>Append-Only Immutable Event Store</span>
               </h3>
               <p className="text-xs text-slate-500">
@@ -324,7 +324,7 @@ export const OpsFunnelPage: React.FC = () => {
                   className="bg-slate-50 hover:bg-slate-100/80 p-3 rounded-xl border border-slate-200/80 transition-colors text-xs space-y-1.5"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono font-bold text-airtel-red">
+                    <span className="font-mono font-bold text-accel-red">
                       {ev.event_type || ev.type}
                     </span>
                     <span className="text-[11px] font-mono text-slate-400">

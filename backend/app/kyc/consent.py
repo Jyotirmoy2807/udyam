@@ -8,7 +8,7 @@ from app.events import emit
 PRIVACY_NOTICES = {
     "1.0": {
         "en": {
-            "title": "Airtel Business KYC & Service Activation Privacy Notice",
+            "title": "Accel Business KYC & Service Activation Privacy Notice",
             "purposes": {
                 "kyc_verification": "Collection and verification of business identification and signatory proofs against statutory registries (GSTIN, Udyam) for telecom compliance.",
                 "service_activation": "Automated order provisioning, enterprise billing, and field feasibility survey.",
@@ -16,7 +16,7 @@ PRIVACY_NOTICES = {
             "retention": "KYC document scans are permanently purged within 30 days of verification.",
         },
         "hi": {
-            "title": "एयरटेल बिजनेस केवाईसी और सेवा सक्रियण गोपनीयता सूचना",
+            "title": "एक्सेल बिजनेस केवाईसी और सेवा सक्रियण गोपनीयता सूचना",
             "purposes": {
                 "kyc_verification": "दूरसंचार अनुपालन के लिए वैधानिक रजिस्ट्रियों (जीएसटीआईएन, उद्यम) के साथ व्यावसायिक पहचान और हस्ताक्षरकर्ता प्रमाणपत्रों का सत्यापन।",
                 "service_activation": "स्वचालित सेवा सक्रियण, बिलिंग और फील्ड सर्वेक्षण।",

@@ -136,14 +136,14 @@ def update_model_card(metrics: dict) -> None:
     content = f"""# Model Card: Lead Propensity Scoring Model
 
 ## Model Details
-- **Model Name**: Airtel SMB Lead Conversion Propensity Model
+- **Model Name**: Accel SMB Lead Conversion Propensity Model
 - **Version**: {metrics['version']}
 - **Model Architecture**: `{metrics['model_type']}` with StandardScaler & OneHotEncoder Pipeline
 - **Target Variable**: `converted` (1 if lead converted to Activated bundle, 0 if Dropped)
 - **Framework**: `scikit-learn` {joblib.__version__}
 
 ## Intended Use
-- Predicts the likelihood that an incoming small/medium business lead converts into an active paid Airtel digital connectivity customer.
+- Predicts the likelihood that an incoming small/medium business lead converts into an active paid Accel digital connectivity customer.
 - Assigns high-propensity leads (deciles 9-10) to top-performing field reps and fast-tracks automated KYC verification.
 
 ## Training & Evaluation Data

@@ -207,7 +207,7 @@ export const TrackerPage: React.FC = () => {
       case "KYC_APPROVED":
         return {
           title: "What Happens Next: Equipment Staging & Tech Assignment",
-          detail: "Your KYC credentials are fully verified. Airtel Enterprise logistics has allocated your hardware and assigned a certified field engineer.",
+          detail: "Your KYC credentials are fully verified. Accel Enterprise logistics has allocated your hardware and assigned a certified field engineer.",
           isAction: false,
         };
       case "PROVISIONING":
@@ -219,13 +219,13 @@ export const TrackerPage: React.FC = () => {
       case "ACTIVE":
         return {
           title: "Service Active: Corporate Connectivity Live",
-          detail: "Your Airtel Business high-speed connection is live with 99.9% uptime SLA monitoring. Your billing cycle starts now.",
+          detail: "Your Accel Business high-speed connection is live with 99.9% uptime SLA monitoring. Your billing cycle starts now.",
           isAction: false,
         };
       default:
         return {
           title: "Order In Progress",
-          detail: "Tracking live fulfillment progress via Airtel Enterprise Provisioning Bus.",
+          detail: "Tracking live fulfillment progress via Accel Enterprise Provisioning Bus.",
           isAction: false,
         };
     }
@@ -246,7 +246,7 @@ export const TrackerPage: React.FC = () => {
           Home
         </Link>
         <span>&bull;</span>
-        <span className="text-airtel-red">Live Order Fulfillment & Provisioning Tracker</span>
+        <span className="text-accel-red">Live Order Fulfillment & Provisioning Tracker</span>
       </div>
 
       {/* Floating Demo Simulator Drawer */}
@@ -404,7 +404,7 @@ export const TrackerPage: React.FC = () => {
                   key={step.key}
                   className={`p-4 rounded-2xl border transition-all ${
                     isCurrent
-                      ? "bg-airtel-lightred/20 border-airtel-red text-airtel-darkred shadow-xs"
+                      ? "bg-accel-lightred/20 border-accel-red text-accel-darkred shadow-xs"
                       : isPast
                       ? "bg-emerald-50/70 border-emerald-200 text-slate-800"
                       : "bg-slate-50/40 border-slate-100 text-slate-400"
@@ -414,7 +414,7 @@ export const TrackerPage: React.FC = () => {
                     {isPast ? (
                       <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                     ) : isCurrent ? (
-                      <div className="w-4 h-4 rounded-full border-2 border-airtel-red border-t-transparent animate-spin" />
+                      <div className="w-4 h-4 rounded-full border-2 border-accel-red border-t-transparent animate-spin" />
                     ) : (
                       <div className="w-4 h-4 rounded-full border border-slate-300" />
                     )}
@@ -450,7 +450,7 @@ export const TrackerPage: React.FC = () => {
               <div>
                 <div className="inline-flex items-center space-x-1.5 text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full mb-1">
                   <Wifi className="w-3 h-3 text-emerald-600" />
-                  <span>Recommended Alternative: Airtel 5G AirFiber (P04)</span>
+                  <span>Recommended Alternative: Accel 5G AirFiber (P04)</span>
                 </div>
                 <div className="text-xs text-slate-700 font-medium">
                   Plug-and-play high-speed wireless connectivity with identical 1 Gbps capability and zero monthly price difference.
@@ -540,9 +540,9 @@ export const TrackerPage: React.FC = () => {
                   <div>
                     <div className="font-bold text-slate-900 text-sm">
                       {item.product_id === "P01"
-                        ? "Airtel Dedicated Business Fiber (1 Gbps)"
+                        ? "Accel Dedicated Business Fiber (1 Gbps)"
                         : item.product_id === "P04"
-                        ? "Airtel 5G AirFiber Outdoor Enterprise Unit"
+                        ? "Accel 5G AirFiber Outdoor Enterprise Unit"
                         : item.product_id === "P05"
                         ? "Enterprise Static IP Block (/29)"
                         : item.product_id === "P07"

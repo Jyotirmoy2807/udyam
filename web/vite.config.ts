@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
       manifest: {
-        name: "Airtel Udyam Digital",
+        name: "Accel Udyam Digital",
         short_name: "Udyam Digital",
         description: "AI-Assisted SME Connectivity & Digital Transformation Platform",
         theme_color: "#E40000",
